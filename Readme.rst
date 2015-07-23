@@ -34,7 +34,7 @@ the vtoolbox directory since you may inadvertently lose them when you update
 
 Example:
 ~~~~~~~~~
-On my Mac (which is unix), my :code:`.octaverc` file contains the command:
+On my Mac (which is Unix), my :code:`.octaverc` file contains the command:
 :code:`path(LOADPATH,"/Volumes/LaCie/Documents/MyMath/ovtoolbox");`
 
 
