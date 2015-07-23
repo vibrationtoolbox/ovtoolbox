@@ -1,0 +1,301 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2007.5.18)  1 MAY 2008 20:35
+entering extended mode
+ %&-line parsing enabled.
+**\makeatletter\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx"\HCode\def\HCo
+de"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\def\Link#1.a.b.c.
+{\g@addto@macro\@documentclasshook{\RequirePackage[#1,html]{tex4ht}}\let\HCode\
+documentstyle\def\documentstyle{\let\documentstyle\HCode\expandafter\def\csname
+ tex4ht\endcsname{#1,html}\def\HCode####1{\documentstyle[tex4ht,}\@ifnextchar[{
+\HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode .a.b.c.\input  /Users/jslat
+er/websites/jslater/classes/systemdynamics/homeworkanswers
+(/Users/jslater/websites/jslater/classes/systemdynamics/homeworkanswers.tex
+(/usr/local/texlive/2007/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/local/texlive/2007/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/tex4ht.sty
+version 2006-10-28-15:32
+Package: tex4ht 
+--------------------------------------
+--- Note --- for _ at preamble, use the command line option `early_'
+--------------------------------------
+--------------------------------------
+--- Note --- for ^ at preamble, use the command line option `early^'
+--------------------------------------
+)
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/tex4ht.4ht
+version 2006-02-22-12:25
+--------------------------------------
+--- Note --- for additional information, use the command line option `info'
+--------------------------------------
+
+::::::::::::::::::::::::::::::::::::::::::
+ TeX4ht info is available in the log file 
+::::::::::::::::::::::::::::::::::::::::::
+) (/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/tex4ht.sty
+version 2006-10-28-15:32
+
+--- needs --- tex4ht homeworkanswers ---
+\tmp:cnt=\count87
+\openout15 = `homeworkanswers.tmp'.
+
+(./homeworkanswers.tmp)
+\tmp:toks=\toks14
+\tmp:dim=\skip43
+--------------------------------------
+--- Note --- for XML code, use the command line option `xml' or `xhtml'
+--------------------------------------
+ (./homeworkanswers.xref)
+\:refout=\write3
+\openout3 = `homeworkanswers.xref'.
+
+
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2007-01-02-13:00
+--------------------------------------
+--- Note --- to remove the DOCTYPE declaration use the command line option `no-
+DOCTYPE'
+--------------------------------------
+)
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2007-01-02-13:00
+)
+--------------------------------------
+--- Note --- for marking of the base font, use the command line option `fonts+'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for non active _, use the command line option `no_'
+--------------------------------------
+--------------------------------------
+--- Note --- for _ of catcode 13, use the command line option `_13'
+--------------------------------------
+--------------------------------------
+--- Note --- for non active ^, use the command line option `no^'
+--------------------------------------
+--------------------------------------
+--- Note --- for ^ of catcode 13, use the command line option `^13'
+--------------------------------------
+
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2007-01-02-13:00
+--------------------------------------
+--- Note --- for alternative charset, use the command line option `charset=...'
+
+--------------------------------------
+--------------------------------------
+--- Note --- to ignore CSS font decoration, use the `NoFonts' command line opti
+on
+--------------------------------------
+--------------------------------------
+--- Note --- for jpg bitmaps of pictures, use the `jpg' command line option. (C
+haracter bitmaps are controled only by `g' records of tex4ht.env and `-g' switc
+hes of tex4ht.c) 
+--------------------------------------
+--------------------------------------
+--- Note --- for gif bitmaps of pictures, use the `gif' command line option. (C
+haracter bitmaps are controled only by `g' records of tex4ht.env and `-g' switc
+hes of tex4ht.c) 
+--------------------------------------
+--------------------------------------
+--- Note --- for content and toc in 2 frames, use the command line option `fram
+es'
+--------------------------------------
+--------------------------------------
+--- Note --- for content, toc, and footnotes in 3 frames, use the command line 
+option `frames-fn'
+--------------------------------------
+--------------------------------------
+--- Note --- for file extension name xht, use the command line option `xht'
+--------------------------------------
+TeX4ht package options: html
+--------------------------------------
+--- Note --- for inline CSS code, use the command line option `css-in'
+--------------------------------------
+--------------------------------------
+--- Note --- for pop ups on mouse over, use the command line option `mouseover'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for addressing images in a subdirectory, use the command line opti
+on `imgdir:.../'
+--------------------------------------
+)
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2007-01-02-13:00
+)
+\:tokwrite=\toks15
+\:tokpage=\toks16
+--------------------------------------
+--- Note --- for back links to toc, use the command line option `sections+'
+--------------------------------------
+--------------------------------------
+--- Note --- for linear crosslinks of pages, use the command line option `next'
+
+--------------------------------------
+\openout15 = `homeworkanswers.4ct'.
+
+\:tocout=\write4
+\openout4 = `homeworkanswers.4tc'.
+
+
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2007-01-02-13:00
+)
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2007-01-02-13:00
+)
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/latex.4ht
+version 2007-01-03-21:02
+--------------------------------------
+--- Note --- for links into captions, instead of float heads, use the command l
+ine option `refcaption'
+--------------------------------------
+
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2007-01-02-13:00
+--------------------------------------
+--- Note --- for enumerated list elements li's with value attributes, use the c
+ommand line option `li-'
+--------------------------------------
+--------------------------------------
+--- Note --- for CSS2 code, use the command line option `css2'
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial tabular, use the command line option `pic-tabular'
+--------------------------------------
+--------------------------------------
+--- Note --- for bitmap fbox'es, use the command line option `pic-fbox'
+--------------------------------------
+--------------------------------------
+--- Note --- for bitmap framebox'es, use the command line option `pic-framebox'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for inline footnotes use command line option `fn-in'
+--------------------------------------
+--------------------------------------
+--- Note --- for a JavaHelp output format, use the command line option `javahel
+p'
+--------------------------------------
+--------------------------------------
+--- Note --- for tracing of latex font commands, use the command line option `f
+onts'
+--------------------------------------
+--------------------------------------
+--- Note --- for width specifications of tabular p entries, use the `p-width' c
+ommand line option or a configuration similar to \Configure{HColWidth}{\HCode{ 
+style="width:\HColWidth"}}
+--------------------------------------
+)
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2007-01-02-13:00
+--------------------------------------
+--- Note --- for pictorial eqnarray, use the command line option `pic-eqnarray'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial $...$ environments, use the command line option `pic
+-m' (not recommended!!)
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial $...$ and $$...$$ environments with latex alt, use t
+he command line option `pic-m+' (not safe!!)
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+))
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/fontmath.4ht
+version 2007-01-03-21:02
+
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2007-01-02-13:00
+)
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2007-01-02-13:00
+))
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/article.4ht
+version 2007-01-03-21:02
+
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2007-01-02-13:00
+--------------------------------------
+--- Note --- for automatic sectioning pagination, use the command line option `
+1', `2', `3', '4', '5', '6', or '7'
+--------------------------------------
+--------------------------------------
+--- Note --- for files named derived from section titles, use the command line 
+option `sec-filename'
+--------------------------------------
+--------------------------------------
+--- Note --- for i-columns index, use the command line option `index=i' (e.g., 
+index=2)
+--------------------------------------
+)
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2007-01-02-13:00
+))
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2007-01-02-13:00
+)
+(/usr/local/texlive/2007/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2007-01-02-13:00
+))
+(./homeworkanswers.aux)
+\openout1 = `homeworkanswers.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+--- file homeworkanswers.css ---
+ [1
+
+] [2]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 19.
+l. 19 Writing homeworkanswers.idv[1] (homeworkanswers0x.png)
+ [3] [4] (./homeworkanswers.aux) ) 
+Here is how much of TeX's memory you used:
+ 3407 strings out of 94074
+ 36102 string characters out of 1163007
+ 194743 words of memory out of 1500000
+ 6713 multiletter control sequences out of 10000+50000
+ 7757 words of font info for 28 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 24i,6n,21p,854b,501s stack positions out of 5000i,500n,6000p,200000b,5000s
+
+Output written on homeworkanswers.dvi (4 pages, 11512 bytes).

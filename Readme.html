@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Installing the Engineering Vibration Toolbox for Octave</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="ovtoolboxinstall.tex"> 
+<meta name="date" content="2014-04-15 20:24:00"> 
+<link rel="stylesheet" type="text/css" href="ovtoolboxinstall.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+
+<h2 class="titleHead">Installing the Engineering Vibration Toolbox for Octave</h2>
+<div class="author" ><span 
+class="cmr-12">Joseph C.</span><span 
+class="cmr-12">&#x00A0;Slater</span></div><br />
+<div class="date" ><span 
+class="cmr-12">April 15, 2014</span></div>
+   </div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Installation on a Windows machine</h3>
+<!--l. 21--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-1002x1">There are two options. If you don&#8217;t know which to choose, choose the first.
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-1004x1">If you do not have Cygwin installed, download octave from sourceforge at<br 
+class="newline" /><a 
+href="http://sourceforge.net/project/showfiles.php?group_id=2888" >http://sourceforge.net/project/showfiles.php?group_id=2888</a><br 
+class="newline" />This link may change, so you may have to go to <br 
+class="newline" /><a 
+href="http://www.gnu.org/software/octave/download.html" >http://www.gnu.org/software/octave/download.html</a><br 
+class="newline" />to find it.
+          </li>
+          <li 
+  class="enumerate" id="x1-1006x2">If you do have Cygwin installed, go to <a 
+href="http://www.cygwin.com/" >http://www.cygwin.com/</a> and look for
+          the octave package. The directories listed below modified to match the location
+          of your Cygwin root directory.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-1008x2">Put the unzipped ovtoolbox folder in<br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">C:\Program</span><span 
+class="cmtt-10x-x-109">&#x00A0;Files\GNU</span><span 
+class="cmtt-10x-x-109">&#x00A0;Octave</span><span 
+class="cmtt-10x-x-109">&#x00A0;#\usr\share\octave\site\m</span></span></span> where # is the version
+     number of your Octave installation.
+     </li>
+     <li 
+  class="enumerate" id="x1-1010x3">Replace the file <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">C:\Program</span><span 
+class="cmtt-10x-x-109">&#x00A0;Files\GNU</span><span 
+class="cmtt-10x-x-109">&#x00A0;Octave</span><span 
+class="cmtt-10x-x-109">&#x00A0;\#\usr\share\octave\site\m\startup</span></span></span>
+                                                                                  
+                                                                                  
+     with the file <span 
+class="cmss-10x-x-109">startup </span>in the ovtoolbox directory. This will make Octave behave more Matlab
+     like and help assure greater compatibility.
+     </li>
+     <li 
+  class="enumerate" id="x1-1012x4">Type &#8220;help vtb1&#8221; after running Octave to see if the installation of the Engineering
+     Vibration Toolbox worked.
+     </li>
+     <li 
+  class="enumerate" id="x1-1014x5">Create a directory <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">C:\Program</span><span 
+class="cmtt-10x-x-109">&#x00A0;Files\GNU</span><span 
+class="cmtt-10x-x-109">&#x00A0;Octave</span><span 
+class="cmtt-10x-x-109">&#x00A0;#\usr\share\octave\site\m\myfiles</span></span></span> where you can
+     put your script and program files.
+     </li></ol>
+<!--l. 38--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Installation on a Unix machine</h3>
+<!--l. 39--><p class="noindent" >Before the Engineering Vibration Toolbox for Octave can be installed, Octave, from
+<a 
+href="http://octave.org" >http://www.octave.org</a> must be installed. Please consult that website for installation
+instructions.
+<!--l. 41--><p class="indent" >   The toolbox can go in any directory as long as the Octave path to it is set properly in the
+.octaverc file in the user&#8217;s home directory. Like any of the other toolboxes, you should
+not save personal files inside the ovtoolbox directory since you may inadvertently
+lose them when you update (i.e. you may decide to delete the directory and replace
+everything).
+<!--l. 47--><p class="indent" >   Example: On my mac (which is BSD unix), my .octaverc file contains the command:
+path(path,&#8221;/Volumes/LaCie/Documents/MyMath/ovtoolbox&#8221;);
+<!--l. 51--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Using the Engineering Vibration Toolbox</h3>
+<!--l. 53--><p class="noindent" >Typing &#8217;help vtb?&#8217; will provide a table of contents for the files related to chapter &#8217;?&#8217;. Typing
+&#8217;help codename&#8217; will provide help on the particular code. Note that the &#8217;filename&#8217; is
+&#8217;codename.m&#8217;.
+<!--l. 57--><p class="indent" >   Engineering Vibration Toolbox commands can be run by typing them with the necessary
+arguments just as any other Octave/MATLAB commands/functions. For instance, vtb1_1 can be
+run by typing &#8221;vtb1_1(1,.1,1,1,0,10)&#8221;. Many functions have multiple forms of input. The help for
+each function shows this flexibility.
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-40004"></a>Printing plots</h3>
+                                                                                  
+                                                                                  
+<!--l. 63--><p class="noindent" >To print a plot, the easiest way may be to type &#8220;print&#8221; from the Octave console. This should
+bring up dialog boxes that enable you to send the current plot to your current Windows
+printer.
+<!--l. 65--><p class="indent" >   The &#8220;print&#8221; command can also be used to generate graphics files for embedding into your
+favorite word processing program. Type &#8220;help print&#8221; for details. By default the file will end up in
+the directory<br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">C:\Program</span><span 
+class="cmtt-10x-x-109">&#x00A0;Files\GNU</span><span 
+class="cmtt-10x-x-109">&#x00A0;Octave</span><span 
+class="cmtt-10x-x-109">&#x00A0;#\octave_files</span></span></span>
+<!--l. 68--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-50005"></a>Acknowledgments</h3>
+<!--l. 70--><p class="noindent" >Support for the Engineering Vibration Toolbox has come from a number of sources. First and
+foremost, Daniel J. Inman, who initially tasked myself and Donald J. Leo to write version 3 of
+the software for his text &#8221;Engineering Vibration&#8221; by Dr. Daniel J. Inman (Prentice Hall, 1994). I
+also thank the Department of Mechanical and Materials Engineering and the College of
+Engineering and Computer Science at Wright State University for providing the computer
+resources for developing the MATLAB 4 version of the software. Perhaps the people who have
+given the most are my students who painfully experienced every piece of beta code, often at the
+least opportune times. Thanks is also given to Dr. Maurice Petyt and Robert C. Chiroux for
+their patience in testing numerous 4.0 beta versions of this software. Finally, John W.
+Eaton and others for writing/coordinating/ developing/supporting Octave. Please see
+http://www.octave.org for more information on Octave and how you can support its
+development.
+<!--l. 86--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-60006"></a>License</h3>
+<!--l. 87--><p class="noindent" >The Engineering Vibration Toolbox for Octave is licensed free of charge for use with Octave. For
+professional use with Matlab, users should contact the Engineering Vibration Toolbox author
+directly.
+<!--l. 92--><p class="indent" >   &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;
+<!--l. 94--><p class="indent" >   MATLAB is a registered trademark of the MathWorks, Inc. Mac(intosh) is a registered
+trademark of Apple Computer, Inc. PostScript is a registered trademark of Adobe Systems, Inc.
+Windows is a registered trademark of Microsoft Corp. Unix is a registered trademark of
+AT&amp;T.
+<!--l. 100--><p class="indent" >   Joseph C. Slater is the copyright holder of the Engineering Vibration Toolbox. Neither the
+author, Prentice Hall, nor Wright State University make any warranty with regard to
+merchantability or fitness for any given purpose with regard to the software. All rights are
+retained. No permission is given to anyone other than myself, the MathWorks and Prentice Hall
+to distribute this software in any manner whatsoever.
+                                                                                  
+                                                                                  
+    
+</body></html> 
+
+                                                                                  
+
+
