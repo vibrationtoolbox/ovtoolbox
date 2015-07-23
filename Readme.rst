@@ -1,100 +1,79 @@
 The Engineering Vibration Toolbox for Octave
 #################################################
 
-ABOUT THE ENGINEERING VIBRATION TOOLBOX
+About The Engineering Vibration Toolbox
 ===========================================
 
-The Engineering Vibration Toolbox is a set of educational programs 
-written in Octave by Joseph C. Slater. Also included are a number of help files,  
+The Engineering Vibration Toolbox for `Octave`_ is a set of educational programs 
+written in `Octave`_ by Joseph C. Slater. Also included are a number of help files,  
 demonstration examples, and data files containing raw experimental data. The 
 codes include single degree of freedom response, response spectrum, finite 
 elements, numerical integration, and phase plane analysis. 
 
-The most current version, can be obtained via the Engineering Vibration 
-Toolbox home page at http://vibrationtoolbox.github.io using any modern browser. For more information, please email me directly at mailto:joseph.c.slater@gmail.com if you have difficulty with this link.
+The most current version, can be obtained via the `Engineering Vibration Toolbox website`_. For more information, please `email me`_ if you have difficulty with this link.
 
 The Engineering Vibration Toolbox codes can be used as 
-examples to learn how to program in Octave.
+examples to learn how to program in `Octave`_.
 
-NOTE TO INSTRUCTORS
+Note To Instructors
 =====================
 
 Please send me any problems you've developed for the toolbox, I'd like to begin a 
 collection of problems that better take advantage of its capabilities.
 
 
-INSTALLING THE TOOLBOX
+Installing The Toolbox
 ========================
 
-The first step is to download the files.  Files in the must be downloaded in the 
-following formats:
-
-Text if they end in:
-	.txt
-	.m
-	.exa
-	
-Binary is they end in:
-	.con
-	.mat
-	.eqn
-
-The toolbox can go in any directory as long as the Octave path to it is 
-set properly in the .octaverc file in the users home directory.  
-It should be named "vtoolbox" for consistency with other installations.  
+The toolbox can go in any directory as long as the `Octave`_ path to it is 
+set properly in the :code:`.octaverc` file in the users home directory.  
+It should be named :code:`vtoolbox` for consistency with other installations.  
 Like any of the other toolboxes, you should not save personal files inside 
 the vtoolbox directory since you may inadvertently lose them when you update 
 (i.e. you may decide to delete the directory and replace everything).  
 
 Example:
-On my Mac, my .octaverc file contains the command:
-path(LOADPATH,"/Volumes/LaCie/Documents/MyMath/ovtoolbox");
+~~~~~~~~~
+On my Mac (which is unix), my :code:`.octaverc` file contains the command:
+:code:`path(LOADPATH,"/Volumes/LaCie/Documents/MyMath/ovtoolbox");`
 
-On my UNIX system, my startup.m file contains the command:
-path(LOADPATH,"/Volumes/LaCie/Documents/MyMath/ovtoolbox");
 
-Funny, that's because my Mac is a UNIX system (OS X). 
-
-Be aware that PCs are not case sensitive, Unix machines (including MacOS X) 
+Be aware that PCs are (often) not case sensitive, Unix machines (including MacOS X) 
 are case sensitive. The bottom line is save the vibration toolbox files in 
 lower case (including the directory), on UNIX machines, and make sure your 
-paths have the correct case. Type the "LOADPATH" command  from the Octave 
+paths have the correct case. Type the :code:`loadpath`  command  from the `Octave`_ 
 prompt to check the case of the directory structure to other toolboxes 
 installed on your machine.
 
 
-USING THE ENGINEERING VIBRATION TOOLBOX
+Using The Engineering Vibration Toolbox
 ==========================================
 
-The files on this disk will load/run on all platforms if transferred 
-properly. Files with the extension .mat, .exa, .con, .eqn, and .out are 
-binary files compatible on all platforms. To load them type "load filename 
--mat". Files with no extension or the extension .m are text files and must 
-be transferred properly to assure that the end-of-line characters are 
-correct for your platform. 
+The files on this disk will load/run on all platforms. To load the
+data files (the files starting with *v* and ending in something other
+than *m*) type :code:`load filename -mat`. 
 
-Typing 'help vtoolbox' will provide a table of contents of the toolbox. 
-Likewise, typing 'help vtb?' will provide a table of contents for the 
-files related to chapter '?'. Typing 'help codename' will provide help on 
-the particular code.  Note that the 'filename' is 'codename.m'.
+Typing :code:`help vtoolbox` will provide a table of contents of the toolbox. 
+Likewise, typing :code:`help vtb?` will provide a table of contents for the 
+files related to chapter *?*. Typing :code:`help codename` will provide help on 
+the particular code.  Note that the *filename* is in the format :code:`codename.m`.
 
 Engineering Vibration Toolbox commands can be run by typing them with the 
 necessary arguments just as any other Octave/MATLAB commands/functions. For 
-instance, vtb1_1 can be run by typing "vtb1_1(1,.1,1,1,0,10)". Many 
+instance, :code:`vtb1_1` can be run by typing :code:`vtb1_1(1,.1,1,1,0,10)`. Many 
 functions have multiple forms of input. The help for each function shows 
 this flexibility.
 
 
-CONTACTING THE AUTHOR
+Contacting The Author
 =========================
 
-If you have any difficulty, please email me at joseph.c.slater@gmail.com.
+If you have any difficulty, please email me at `email me`_.
 
-Please visit the Engineering Vibration Toolbox home page at 
-http://vibrationtoolbox.github.io
+Please visit the `Engineering Vibration Toolbox website`_
 
 
-ACKNOWLEDGMENTS
+Acknowledgments
 =====================
 
 Support for the Engineering Vibration Toolbox has come from a number of 
@@ -109,11 +88,11 @@ who painfully experienced every piece of beta code, often at the least
 opportune times. Thanks is also given to Dr. Maurice Petyt and Robert C. 
 Chiroux for their patience in testing numerous 4.0 beta versions of this 
 software. Finally, John W. Eaton and others for writing/coordinating/
-developing/supporting Octave. Please see http://www.octave.org for more 
+developing/supporting Octave. Please go to the `Octave`_ website for more 
 information on Octave and how you can support its development.
 
 
-LICENSE
+License
 ===============
 The Engineering Vibration Toolbox is licensed free of charge for educational use. 
 For professional use, users should contact the Engineering Vibration Toolbox 
@@ -136,3 +115,7 @@ permission is given to anyone other than myself, the MathWorks and
 Prentice Hall to distribute this software in any manner whatsoever. 
 
 
+
+.. _`Engineering Vibration Toolbox web page`: http://vibrationtoolbox.github.io
+.. _`email me`: mailto:joseph.c.slater@gmail.com 
+.. _`Octave`: http://www.octave.org
