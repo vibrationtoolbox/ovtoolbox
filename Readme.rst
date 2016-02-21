@@ -119,3 +119,4 @@ Prentice Hall to distribute this software in any manner whatsoever.
 .. _`Engineering Vibration Toolbox web page`: http://vibrationtoolbox.github.io
 .. _`email me`: mailto:joseph.c.slater@gmail.com 
 .. _`Octave`: http://www.octave.org
+.. _`Engineering Vibration Toolbox website`: http://vibrationtoolbox.github.io
