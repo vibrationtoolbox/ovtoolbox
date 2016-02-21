@@ -35,11 +35,11 @@ the vtoolbox directory since you may inadvertently lose them when you update
 Example:
 ~~~~~~~~~
 On my Mac (which is Unix), my :code:`.octaverc` file contains the command:
-:code:`path(LOADPATH,"/Volumes/LaCie/Documents/MyMath/ovtoolbox");`
+:code:`path(LOADPATH,"/Users/jslater/Documents/MyMath/ovtoolbox");`
 
 
-Be aware that PCs are (often) not case sensitive, Unix machines (including MacOS X) 
-are case sensitive. The bottom line is save the vibration toolbox files in 
+Be aware that Windows PCs are (often) not case sensitive, Unix machines (including MacOS X) 
+*are* case sensitive. The bottom line is save the vibration toolbox files in 
 lower case (including the directory), on UNIX machines, and make sure your 
 paths have the correct case. Type the :code:`loadpath`  command  from the `Octave`_ 
 prompt to check the case of the directory structure to other toolboxes 
