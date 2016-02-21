@@ -1,0 +1,12 @@
+Name: Engineering Vibration Toolbox for Octave
+Version: 5.0.0
+Date: 2016-21-02
+Author: Joseph C. Slater
+Maintainer: Joseph C. Slater
+Title: Engineering Vibration Toolbox for Octave
+Description: The Engineering Vibration Toolbox for Octave is a set of educational programs 
+  written in Octave. Also included are a number of help files,  
+  demonstration examples, and data files containing raw experimental data. The 
+  codes include single degree of freedom response, response spectrum, finite 
+  elements, numerical integration, and phase plane analysis. 
+License: GPLv3+
