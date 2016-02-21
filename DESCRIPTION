@@ -4,6 +4,7 @@ Date: 2016-21-02
 Author: Joseph C. Slater
 Maintainer: Joseph C. Slater
 Title: Engineering Vibration Toolbox for Octave
+Categories: Engineering
 Description: The Engineering Vibration Toolbox for Octave is a set of educational programs 
   written in Octave. Also included are a number of help files,  
   demonstration examples, and data files containing raw experimental data. The 
