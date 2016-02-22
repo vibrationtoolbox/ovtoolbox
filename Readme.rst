@@ -68,8 +68,8 @@ In `Octave`_
    delete('vtoolbox.zip')
    ;
 
-*Why the semi-colons?:* It's my way of maing sure you don't leave the
-last command hanging and leave it unexecuted.
+*Why the semi-colons?* It's my way of maing sure you don't leave the
+last command unexecuted.
 
 Using The Engineering Vibration Toolbox
 ==========================================
