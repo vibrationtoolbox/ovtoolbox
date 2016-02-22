@@ -22,32 +22,35 @@ Please send me any problems you've developed for the toolbox, I'd like to begin 
 collection of problems that better take advantage of its capabilities.
 
 
-Installing The Toolbox
-========================
+Installing, Updating, and Removing The Toolbox
+======================================================
 
-New Instructions
+New Instructions:
 ---------------------
-Download the zip file from github
+Download the zip file from `github
+<https://github.com/vibrationtoolbox/ovtoolbox>`_. Look for the
+**Download Zip** button. Alternatively, `click here <https://raw.githubusercontent.com/vibrationtoolbox/ovtoolbox/master/>`_. 
 
-cd ~/Downloads
-pkg install ovtoolbox-master.zip
+1. Run `Octave`_
 
-Failure to use the `-auto` option will prevent octave from easily
-finding the toolbox when run. 
+2. Change directories to your download directory (you need to figure
+   out the name and location for your machine). For me:   
+
+   :code:`cd ~/Downloads`
+
+3. Install using the :code:`pkg` command in `Octave`_.
+   :code:`pkg install ovtoolbox-master.zip`
+
 
 To update:
-***********
-pkg update vtoolbox
+-------------
+:code:`pkg update vtoolbox`
 
 
-Old instructions
----------------------
-The toolbox can go in any directory as long as the `Octave`_ path to it is 
-set properly in the :code:`.octaverc` file in the users home directory.  
-It should be named :code:`vtoolbox` for consistency with other installations.  
-Like any of the other toolboxes, you should not save personal files inside 
-the vtoolbox directory since you may inadvertently lose them when you update 
-(i.e. you may decide to delete the directory and replace everything).  
+To remove:
+------------
+:code:`pkg uninstall ovtoolbox`
+
 
 Example:
 ~~~~~~~~~
