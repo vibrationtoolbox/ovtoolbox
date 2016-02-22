@@ -1,4 +1,4 @@
-The Engineering Vibration Toolbox for Octave
+The Engineering Vibration Toolbox for `Octave`_
 #################################################
 
 About The Engineering Vibration Toolbox
@@ -33,23 +33,27 @@ Download the zip file from `github
 
 1. Run `Octave`_
 
-2. Change directories to your download directory (you need to figure
-   out the name and location for your machine). For me:   
+2. Change directories to your download directory. You need to figure
+   out the name and location for your machine. For me:   
 
    :code:`cd ~/Downloads`
 
-3. Install using the :code:`pkg` command in `Octave`_.
+3. Install using the :code:`pkg` command in `Octave`_
    
    :code:`pkg install ovtoolbox-master.zip`
 
 
 To update:
 -------------
+In `Octave`_
+
 :code:`pkg update vtoolbox`
 
 
 To remove:
 ------------
+In `Octave`_
+
 :code:`pkg uninstall ovtoolbox`
 
 
@@ -75,8 +79,8 @@ data files (the files starting with *v* and ending in something other
 than *m*) type :code:`load filename -mat`. 
 
 Typing :code:`help vtoolbox` will provide a table of contents of the toolbox. 
-Likewise, typing :code:`help vtb?` will provide a table of contents for the 
-files related to chapter *?*. Typing :code:`help codename` will provide help on 
+Likewise, typing :code:`help vtb#` will provide a table of contents for the 
+files related to chapter *#*. Typing :code:`help codename` will provide help on 
 the particular code.  Note that the *filename* is in the format :code:`codename.m`.
 
 Engineering Vibration Toolbox commands can be run by typing them with the 
