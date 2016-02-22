@@ -51,7 +51,7 @@ if dtype==2
    k4(2)=h*(-k*(z1(1)+k3(1))-dcoef*sign(z1(2)+k3(2)))/m;
 
    z(:,l1+1)=z(:,l1)+1/6*(k1+2*k2+2*k3+k4);
-   if abs(z1(2))<abs(x0*sqrt(k/m)+v0)*.05 & dcoef>abs(k*z1(1))
+   if abs(z1(2))<abs(x0*sqrt(k/m)+v0)*.05 && dcoef>abs(k*z1(1))
      z(:,l1+1)=z(:,l1);
      z(2,l1+1)=0;
    end

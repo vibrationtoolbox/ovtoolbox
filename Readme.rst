@@ -27,10 +27,13 @@ Installing The Toolbox
 
 New Instructions
 ---------------------
-Download the zip file
+Download the zip file from github
 
 cd ~/Downloads
 pkg -auto install ovtoolbox-master.zip
+
+Failure to use the `-auto` option will prevent octave from easily
+finding the toolbox when run. 
 
 To update:
 ***********

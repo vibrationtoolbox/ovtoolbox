@@ -8,7 +8,7 @@ if nargin==0
   sizepath=size(pathname);
   shortpathname=pathname(1:sizepath(2)-1);
   lsp=size(findstr(shortpathname,':'));
-  if strcmp(computer,'MAC2') & lsp(1)==0
+  if strcmp(computer,'MAC2') && lsp(1)==0
     shortpathname=[shortpathname ':'];
   end
   cdpath=['cd ' '''' shortpathname '''' ];% Crazy quotes allow spaces
@@ -83,14 +83,14 @@ for ii=1:1000
 	disp('     d) Print Deformation')
     disp('     e) Exit')
     answer=input('Enter Choice: ','s');
-    if answer=='e' | answer=='c'
+    if answer=='e' || answer=='c'
       break
     end
-    if answer=='a' & flag==1
+    if answer=='a' && flag==1
       clc
       mnold=mn;
       mn=input('Enter mode number: '); 
-      if mn <1 | mn>nmodes
+      if mn <1 || mn>nmodes
         disp('That mode doesn''t exist.  Try again.')
         mn=mnold;
       end

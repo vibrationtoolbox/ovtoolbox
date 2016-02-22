@@ -14,7 +14,7 @@ function vtb2_4(z,rmin,rmax,opt)
 
 clf
 hold('off')
-if nargin==0|nargin==1
+if nargin==0||nargin==1
 	if nargin==1
 		opt=z;
 	else

@@ -60,7 +60,7 @@ for k=1:n
   xd2=(xd2-xd)./(l+1e-10*range)*len+xd;
   for i=1:s(1)
      for j=1:s(2)
-        if xd(i,j)==0 & xdd(i,j)==0
+        if xd(i,j)==0 && xdd(i,j)==0
            if exist('zlog')==0
               xx=num2str(x(i,j));
               xxd=num2str(xd(i,j));

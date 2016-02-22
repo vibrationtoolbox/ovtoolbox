@@ -1,4 +1,4 @@
-function [z,nf,a,com]=vtb7_4old(f,TF,b)
+function [z,nf,a,com]=vtb7_4(f,TF,b)
 %[z,nf,a,com]=VTB7_4(f,TF) Curve fit to SDOF FRF.
 % f is the frequency vector in Hz. It does not have to 
 %    start at 0 Hz.
@@ -44,7 +44,7 @@ if nargin==2
 	x=[a0;z;2*pi*f(in);0;0;0];%sign(real(TF(1)))*
 	%x2=x;%
 	%cost=vtb7_4(x,f,TF)
-	if in-3<1|in+2>length(f)
+	if in-3<1||in+2>length(f)
 		disp('The peak response must be near the middle of the data')
 		disp('Please center your peak and try again')
 		break
