@@ -39,7 +39,6 @@ To install:
    delete('vtoolbox.zip')
    vtb
    ;
-   
 
 **Note**: If you use the Github Download button, you **must** rename
 the downloaded file to :code:`vtoolbox.zip` and manually use :code:`pkg`.
@@ -64,8 +63,13 @@ In `Octave`_
 .. code-block:: octave
 
    pkg uninstall ovtoolbox
+   [s, success, message]=urlwrite('https://github.com/josephcslater/ovtoolbox/archive/master.zip','vtoolbox.zip')
+   pkg install vtoolbox.zip
+   delete('vtoolbox.zip')
    ;
 
+*Why the semi-colons?:* It's my way of maing sure you don't leave the
+last command hanging and leave it unexecuted.
 
 Using The Engineering Vibration Toolbox
 ==========================================
