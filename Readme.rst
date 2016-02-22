@@ -28,23 +28,9 @@ Installing, Updating, and Removing The Toolbox
 To install:
 ---------------------
 
-0. Run `Octave`_.
+1. Run `Octave`_.
 
-1. Change directories to your download directory. You need to figure
-   out the name and location for your machine. For me:
-
-   :code:`[s, success, message]=urlwrite('https://github.com/josephcslater/ovtoolbox/archive/master.zip','vtoolbox.zip')`
-
-**Note**: If you use the Github Download button, you **must** rename
-the downloaded file to :code:`vtoolbox.zip`.
-
-3. Install using the :code:`pkg` command in `Octave`_
-   
-   :code:`pkg install vtoolbox.zip`
-
-4. Delete the zip file (you nave no more use for it).
-
-   :code:`delete('vtoolbox.zip')`
+2. Copy and paste this into `Octave`_.
 
 .. code-block:: octave
 
@@ -53,20 +39,32 @@ the downloaded file to :code:`vtoolbox.zip`.
    delete('vtoolbox.zip')
    vtb
    ;
+   
+
+**Note**: If you use the Github Download button, you **must** rename
+the downloaded file to :code:`vtoolbox.zip` and manually use :code:`pkg`.
 
 To update:
 -------------
-To update, you need to remove and reinstall.
+To update, copy and paste this into `Octave`_
 
-Follow the instructions below to remove it, then to reinstall. 
+.. code-block:: octave
 
+   pkg uninstall ovtoolbox
+   [s, success, message]=urlwrite('https://github.com/josephcslater/ovtoolbox/archive/master.zip','vtoolbox.zip')
+   pkg install vtoolbox.zip
+   delete('vtoolbox.zip')
+   ;
+   
 
 To remove:
 ------------
 In `Octave`_
 
-:code:`pkg uninstall ovtoolbox`
+.. code-block:: octave
 
+   pkg uninstall ovtoolbox
+   ;
 
 
 Using The Engineering Vibration Toolbox
