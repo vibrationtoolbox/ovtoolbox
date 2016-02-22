@@ -23,7 +23,7 @@ if fmin==0
 	fmin=fmax/3000;
 end
 
-%wn=0;
+
 i=0;
 w=(fmin:(fmax-fmin)/3000:fmax)'*2*pi;
 
@@ -43,69 +43,46 @@ wn=0;
 if nargin==6
 	zeta=0.01;
 end
-pfunc='plot(';
+pfunc='subplot(2,1,1);plot(';
+pphasefunc = 'subplot(2,1,2);plot(';
 i;
 while wn<1.3*(fmax*2*pi)%Including contributions of mode with frequencies 5x the max
     i=i+1;
     if i>1;
         pfunc=[pfunc ','];
+        pphasefunc=[pphasefunc ','];
+
     end
-    %legtext{i+1}=['Contribution of mode ' num2str(i)];
-    %3
-    %whos
+
     clear wn xx U
     [wn,xx,U]=vtb6_3(i,bctype,beamparams,5000);
-    %4
-    %wn%wn=wn(i);
-    %xx=xx(:,i);
-    %whos
-	%wn/2/pi
-        %xx,U,xin
-        %plot(xx,U)
-	Uin=spline(xx,U,xin);
-	Uout=spline(xx,U,xout);
-        %        pause
-	%plot(xx,U,xin,Uin,'*',xout,Uout,'o'),pause
-    %modeint=sum(U)*L;
-    %1
+    Uin=spline(xx,U,xin);
+    Uout=spline(xx,U,xout);
     a(:,i)=rho *A*Uin*Uout./(wn^2-w.^2+2*zeta*wn*w*sqrt(-1));
-    %2
+
     f(i)=wn/2/pi;
-    %i
+
     pfunc=[pfunc  'w/2/pi,20*log10(abs(a(:,' num2str(i) ['))),"-;' ...
+                        'Contribution of mode ']  num2str(i)  ';"'];
+    pphasefunc=[pphasefunc  'w/2/pi,unwrap(angle(a(:,' num2str(i) ['))),"-;' ...
                         'Contribution of mode ']  num2str(i)  ';"'];
     
 end
-%3
-%size(a)
-pfunc=[pfunc  ',w/2/pi,20*log10(abs(sum(a,2))),"-;Total FRF;"'];
-    
+
+pfunc=[pfunc  ',w/2/pi,20*log10(abs(sum(a,2))),"-;Total Magnitude;"'];
+pphasefunc = [pphasefunc  ',w/2/pi,unwrap(angle(sum(a,2))),"-;Total Phase;"'];   
 
 
-%size(a)
 subplot(2,1,1)
 eval([pfunc ')'])
-axis
-%plot(w/2/pi,20*log10(abs(sum(a,2))))
-%hold on
-%plot(w/2/pi,20*log10(abs(a)))
-%pause
 grid on
 xlabel('Frequency (Hz)')
 ylabel('FRF (dB)')
-%legtext{1}='Total Frequency Response Function';
-%legend(legtext)
-%hold off
-subplot(2,1,2)
-%size(sum(a,2))
-%pause
-aa=unwrap(angle(sum(a,2)))/pi*180;
-plot(w/2/pi,aa,'-;Total Phase;')
-%size(w)
-grid on
+axis
+eval([pphasefunc ')'])
 xlabel('Frequency (Hz)')
 ylabel('Phase (deg)')
-%whos;
+grid on
 if nargout~=0
 	fout=w/2/pi;
 	H=sum(a,2);
