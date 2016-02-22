@@ -44,7 +44,7 @@ if nargin==2
 	x=[a0;z;2*pi*f(in);0;0;0];%sign(real(TF(1)))*
 	%x2=x;%
 	%cost=vtb7_4(x,f,TF)
-	if in-3<1|in+2>length(f)
+	if in-3<1||in+2>length(f)
 		disp('The peak response must be near the middle of the data')
 		disp('Please center your peak and try again')
 		break

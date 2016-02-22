@@ -30,7 +30,7 @@ New Instructions
 Download the zip file from github
 
 cd ~/Downloads
-pkg -auto install ovtoolbox-master.zip
+pkg install ovtoolbox-master.zip
 
 Failure to use the `-auto` option will prevent octave from easily
 finding the toolbox when run. 
