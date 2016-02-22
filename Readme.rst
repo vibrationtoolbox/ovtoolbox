@@ -25,6 +25,20 @@ collection of problems that better take advantage of its capabilities.
 Installing The Toolbox
 ========================
 
+New Instructions
+---------------------
+Download the zip file
+
+cd ~/Downloads
+pkg -auto install ovtoolbox-master.zip
+
+To update:
+***********
+pkg update vtoolbox
+
+
+Old instructions
+---------------------
 The toolbox can go in any directory as long as the `Octave`_ path to it is 
 set properly in the :code:`.octaverc` file in the users home directory.  
 It should be named :code:`vtoolbox` for consistency with other installations.  
