@@ -1,4 +1,4 @@
-function [z,nf,a,com]=VTB7_4(f,TF,b)
+function [z,nf,a,com]=vtb7_4(f,TF,b)
 %[z,nf,a,com]=VTB7_4(f,TF) Curve fit to SDOF FRF.
 % f is the frequency vector in Hz. It does not have to 
 %    start at 0 Hz.
