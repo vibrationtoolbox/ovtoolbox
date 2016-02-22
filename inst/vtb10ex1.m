@@ -1,3 +1,3 @@
-function vdp=vdp(x,xd)
+function vdp=vtb10ex1(x,xd)
 % Example function file for the Van der Pol equation simulation.
 vdp=-(.2*(x.^2-1).*xd+x);

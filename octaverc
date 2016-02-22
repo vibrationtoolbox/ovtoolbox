@@ -1,4 +1,6 @@
- PS1 = ">> ";
+% Not sure the value of this. Probably best to disregard  (2016/02/22)
+
+PS1 = ">> ";
   PS2 = "";
   beep_on_error = 1.0;
   default_eval_print_flag = 0.0;

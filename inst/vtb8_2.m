@@ -54,7 +54,7 @@ if nargin==0
   sizepath=size(pathname);
   shortpathname=pathname(1:sizepath(2)-1);
   lsp=size(findstr(shortpathname,':'));
-  if strcmp(computer,'MAC2') & lsp(1)==0
+  if strcmp(computer,'MAC2') && lsp(1)==0
     shortpathname=[shortpathname ':'];
   end
   cdpath=['cd ' '''' shortpathname '''' ];% Crazy quotes allow spaces
@@ -240,7 +240,7 @@ selx=1:3:snode(1)*3;
 sely=2:3:snode(1)*3;
 selt=3:3:snode(1)*3;
 answer=input('Do you want to do a static or dynamic analysis? (s/d) ','s');
-if answer=='s' | answer=='S'
+if answer=='s' || answer=='S'
   pf=(force(:,1)-1)*3+force(:,2);
   f=zeros(snode(1)*3,1);
   f(pf)=force(:,3);
@@ -301,7 +301,7 @@ if answer1~='n'
     sizepath=size(pathname);
     shortpathname=pathname(1:sizepath(2)-1);
     lsp=size(findstr(shortpathname,':'));
-    if strcmp(computer,'MAC2') & lsp(1)==0
+    if strcmp(computer,'MAC2') && lsp(1)==0
       shortpathname=[shortpathname ':'];
     end
     cdpath=['cd ' '''' shortpathname '''' ];% Crazy quotes allow spaces
@@ -331,7 +331,7 @@ if answer2~='n'
     sizepath=size(pathname);
     shortpathname=pathname(1:sizepath(2)-1);
     lsp=size(findstr(shortpathname,':'));
-    if strcmp(computer,'MAC2') & lsp(1)==0
+    if strcmp(computer,'MAC2') && lsp(1)==0
       shortpathname=[shortpathname ':'];
     end
     cdpath=['cd ' '''' shortpathname '''' ];% Crazy quotes allow spaces

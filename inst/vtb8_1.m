@@ -8,8 +8,15 @@ function vtb8_1
 
 %       11 Nov 94 -- fixed graphics to work with Matlab 4.0
 
-clc
-home
+
+
+
+disp(["Unfortunately this poor-man's GUI doesn't work."])
+disp("You'll have to make the input file by hand.")
+disp("Don't worry. You aren't missing much.")
+
+break
+
 aa=version;ll=length(aa);
 figure
 grid on
@@ -20,7 +27,7 @@ axis('square')
 nnum=['1  '];
 for i=2:1000
   loc=input('Enter x and y location of node (ie. [x y]) or 0 to end. ');
-  if loc==0 & length(loc)==1 ,break,end
+  if loc==0 && length(loc)==1 ,break,end
   node(i,:)=loc;
   length=max([max(node(:,1))-min(node(:,1)) max(node(:,2))-min(node(:,2))]);
 %  xl=(max(node(:,1))+min(node(:,1)))/2-.7*length;
@@ -301,7 +308,7 @@ if answer=='y'
   sizepath=size(pathname);
   shortpathname=pathname(1:sizepath(2)-1);
   lsp=size(findstr(shortpathname,':'));
-  if strcmp(computer,'MAC2') & lsp(1)==0
+  if strcmp(computer,'MAC2') && lsp(1)==0
     shortpathname=[shortpathname ':'];
   end
   %path(shortpathname)

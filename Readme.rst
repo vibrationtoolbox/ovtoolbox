@@ -1,4 +1,4 @@
-The Engineering Vibration Toolbox for Octave
+The Engineering Vibration Toolbox for `Octave`_
 #################################################
 
 About The Engineering Vibration Toolbox
@@ -22,29 +22,54 @@ Please send me any problems you've developed for the toolbox, I'd like to begin 
 collection of problems that better take advantage of its capabilities.
 
 
-Installing The Toolbox
-========================
+Installing, Updating, and Removing The Toolbox
+======================================================
 
-The toolbox can go in any directory as long as the `Octave`_ path to it is 
-set properly in the :code:`.octaverc` file in the users home directory.  
-It should be named :code:`vtoolbox` for consistency with other installations.  
-Like any of the other toolboxes, you should not save personal files inside 
-the vtoolbox directory since you may inadvertently lose them when you update 
-(i.e. you may decide to delete the directory and replace everything).  
+To install:
+---------------------
 
-Example:
-~~~~~~~~~
-On my Mac (which is Unix), my :code:`.octaverc` file contains the command:
-:code:`path(LOADPATH,"/Users/jslater/Documents/MyMath/ovtoolbox");`
+1. Run `Octave`_.
 
+2. Copy and paste this into `Octave`_.
 
-Be aware that Windows PCs are (often) not case sensitive, Unix machines (including MacOS X) 
-*are* case sensitive. The bottom line is save the vibration toolbox files in 
-lower case (including the directory), on UNIX machines, and make sure your 
-paths have the correct case. Type the :code:`loadpath`  command  from the `Octave`_ 
-prompt to check the case of the directory structure to other toolboxes 
-installed on your machine.
+.. code-block:: octave
 
+   [s, success, message]=urlwrite('https://github.com/josephcslater/ovtoolbox/archive/master.zip','vtoolbox.zip')
+   pkg install vtoolbox.zip
+   delete('vtoolbox.zip')
+   vtb
+   ;
+
+**Note**: If you use the Github Download button, you **must** rename
+the downloaded file to :code:`vtoolbox.zip` and manually use :code:`pkg`.
+
+To update:
+-------------
+To update, copy and paste this into `Octave`_
+
+.. code-block:: octave
+
+   pkg uninstall ovtoolbox
+   [s, success, message]=urlwrite('https://github.com/josephcslater/ovtoolbox/archive/master.zip','vtoolbox.zip')
+   pkg install vtoolbox.zip
+   delete('vtoolbox.zip')
+   ;
+   
+
+To remove:
+------------
+In `Octave`_
+
+.. code-block:: octave
+
+   pkg uninstall ovtoolbox
+   [s, success, message]=urlwrite('https://github.com/josephcslater/ovtoolbox/archive/master.zip','vtoolbox.zip')
+   pkg install vtoolbox.zip
+   delete('vtoolbox.zip')
+   ;
+
+*Why the semi-colons?* It's my way of maing sure you don't leave the
+last command unexecuted.
 
 Using The Engineering Vibration Toolbox
 ==========================================
@@ -54,8 +79,8 @@ data files (the files starting with *v* and ending in something other
 than *m*) type :code:`load filename -mat`. 
 
 Typing :code:`help vtoolbox` will provide a table of contents of the toolbox. 
-Likewise, typing :code:`help vtb?` will provide a table of contents for the 
-files related to chapter *?*. Typing :code:`help codename` will provide help on 
+Likewise, typing :code:`help vtb#` will provide a table of contents for the 
+files related to chapter *#*. Typing :code:`help codename` will provide help on 
 the particular code.  Note that the *filename* is in the format :code:`codename.m`.
 
 Engineering Vibration Toolbox commands can be run by typing them with the 

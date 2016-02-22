@@ -20,7 +20,7 @@ wd=w*sqrt(1-zeta^2);
 if zeta~=1
   phi=atan(zeta/sqrt(1-zeta^2));
 end
-if (zeta<1 & zeta>=0)
+if (zeta<1 && zeta>=0)
   x=fo/w^2*(1-w/wd*exp(-zeta*w*t).*cos(wd*t-phi));
  elseif zeta==1
   lam=-w;

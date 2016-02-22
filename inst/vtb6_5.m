@@ -32,7 +32,7 @@ I=beamparams(2);
 rho=beamparams(3);
 A=beamparams(4);
 L=beamparams(5);
-if min([xin xout])<0|max([xin xout])>L
+if min([xin xout])<0||max([xin xout])>L
 	disp('One or both locations are not on the beam.')
 	return
 end
