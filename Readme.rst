@@ -25,7 +25,7 @@ collection of problems that better take advantage of its capabilities.
 Installing, Updating, and Removing The Toolbox
 ======================================================
 
-New Instructions:
+To install:
 ---------------------
 Download the zip file from `github
 <https://github.com/vibrationtoolbox/ovtoolbox>`_. Look for the
@@ -45,9 +45,9 @@ Download the zip file from `github
 
 To update:
 -------------
-In `Octave`_
+To update, you need to remove and reinstall:
 
-:code:`pkg update vtoolbox`
+Follow the instructions below to remove it, then to reinstall. 
 
 
 To remove:
@@ -56,19 +56,6 @@ In `Octave`_
 
 :code:`pkg uninstall ovtoolbox`
 
-
-Example:
-~~~~~~~~~
-On my Mac (which is Unix), my :code:`.octaverc` file contains the command:
-:code:`path(LOADPATH,"/Users/jslater/Documents/MyMath/ovtoolbox");`
-
-
-Be aware that Windows PCs are (often) not case sensitive, Unix machines (including MacOS X) 
-*are* case sensitive. The bottom line is save the vibration toolbox files in 
-lower case (including the directory), on UNIX machines, and make sure your 
-paths have the correct case. Type the :code:`loadpath`  command  from the `Octave`_ 
-prompt to check the case of the directory structure to other toolboxes 
-installed on your machine.
 
 
 Using The Engineering Vibration Toolbox
