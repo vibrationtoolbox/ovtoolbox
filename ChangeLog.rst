@@ -12,7 +12,8 @@ website.
   Date       code/s                change
 --------- --------------- -----------------------------------------------
 
-
+02/22/16    readme10        Deleted (extraneous)
+02/22/16    vtoolbox        Deleted (extraneous)
 02/22/16    vtb6_5          Breakdown phase plot by mode.
 02/22/16    vtbud           Now installs easily from github
 02/22/16    NA              Turned into a formal Octave Package
