@@ -11,7 +11,7 @@ website.
 ========= =============== ===============================================
   Date       code/s                change
 --------- --------------- -----------------------------------------------
-
+02/23/16    vtb6_5          Phase now shown properly in degrees
 02/22/16    readme10        Deleted (extraneous)
 02/22/16    vtoolbox        Deleted (extraneous)
 02/22/16    vtb6_5          Breakdown phase plot by mode.
