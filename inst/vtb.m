@@ -1,6 +1,6 @@
 function b=vtb(a)
 % Student Edition of the Vibration Toolbox for Octave.
-% Version 6.0 2016-02-22
+% Version 6.0 2016-02-29
 % Last update: Type "vtbud"
 %
 %  Type "help vtoolbox" for help on the Engineering Vibration Toolbox.
