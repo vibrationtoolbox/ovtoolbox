@@ -20,10 +20,10 @@ else
         dis('Not able to install at this time.')
     end
     disp(['Either you are not on the internet or are using a Windows ' ...
-          'machine.']
+          'machine.'])
     disp('Automated installation is, unfortunately, unreliable on Windows')
     disp(['Please try later or use the download and installation ' ...
-          'instructions on vibtationtoolbox.github.com']
+          'instructions on vibtationtoolbox.github.com'])
     disp('Sorry for the inconvenience.')
     disp('You may have to manually uninstall and reinstall.')
 end
