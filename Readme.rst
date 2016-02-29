@@ -34,7 +34,7 @@ To install:
 
 .. code-block:: octave
 
-   [s, success, message]=urlwrite('https://github.com/josephcslater/ovtoolbox/archive/master.zip','vtoolbox.zip')
+   [s, success, message]=urlwrite('https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip','vtoolbox.zip')
    pkg install vtoolbox.zip
    delete('vtoolbox.zip')
    vtb
@@ -52,7 +52,7 @@ Otherwise, run `Octave`_ and paste the following to the prompt:
 .. code-block:: octave
 
    pkg uninstall vtoolbox
-   [s, success, message]=urlwrite('https://github.com/josephcslater/ovtoolbox/archive/master.zip','vtoolbox.zip')
+   [s, success, message]=urlwrite('https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip','vtoolbox.zip')
    pkg install vtoolbox.zip
    delete('vtoolbox.zip')
    ;
@@ -65,7 +65,7 @@ In `Octave`_
 .. code-block:: octave
 
    pkg uninstall vtoolbox
-   [s, success, message]=urlwrite('https://github.com/josephcslater/ovtoolbox/archive/master.zip','vtoolbox.zip')
+   [s, success, message]=urlwrite('https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip','vtoolbox.zip')
    pkg install vtoolbox.zip
    delete('vtoolbox.zip')
    ;
