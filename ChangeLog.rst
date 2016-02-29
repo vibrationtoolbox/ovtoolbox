@@ -11,6 +11,8 @@ website.
 ========= =============== ===============================================
   Date       code/s                change
 --------- --------------- -----------------------------------------------
+02/29/16    vtbud           Don't uninstall if install won't be
+                            possible.  
 02/29/16    vtbud           was pointing to the wrong directory. 
 02/29/16    vtb             Typo
 02/23/16    vtb6_5          Phase now shown properly in degrees
