@@ -16,8 +16,8 @@ function b=vtb(a)
 %if nargin==0
 	disp(' ')
 	disp('You should type:')
-	disp('help vtb_#')
-	disp('for help on a file named vtb_#.m')
+	disp('help vtb#')
+	disp('for help on a file named vtb#.m')
 	
 	%pause(2)
 	help vtb
