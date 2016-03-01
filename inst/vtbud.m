@@ -14,8 +14,10 @@ if success == 0
     # necessary under Cygwin. I'm hoping it simlifies the process. 
     system(['curl -4 -L https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip > vtoolbox_temp.zip'])
     svtb = size('vtoolbox_temp.zip');
-    if svtb(2) == 17
-        success = 1;
+    try 
+        if svtb(2) == 17
+            success = 1;
+        end
     end
     
 end
