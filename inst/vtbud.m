@@ -2,15 +2,15 @@ try
     pkg load vtoolbox
 end
 
-[s, success, message]=urlwrite('https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip','vtoolbox_temp.zip')
+[s, success, message]=urlwrite('https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip','vtoolbox_temp.zip');
 
 if success == 0
     % Let's try to do this at the system prompt. This seems to be
     % necessary under cygwin. I'm hoping it simlifies the process. 
     system(['curl -4 -L https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip > vtoolbox_temp.zip'])
-    svtb = size('vtoolbox_temp.zip')
+    svtb = size('vtoolbox_temp.zip');
     if svtb(2) == 17
-        success = 1
+        success = 1;
     end
     
 end
