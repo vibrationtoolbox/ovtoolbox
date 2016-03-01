@@ -11,6 +11,9 @@ website.
 ========= =============== ===============================================
   Date       code/s                change
 --------- --------------- -----------------------------------------------
+03/01/17    vtbud           Work around for cygwin. Download and run
+                            should be the new instructions. vtbud
+			    should now work. 
 02/29/16    vtbud           Don't uninstall if install won't be
                             possible.  
 02/29/16    vtbud           was pointing to the wrong directory. 
