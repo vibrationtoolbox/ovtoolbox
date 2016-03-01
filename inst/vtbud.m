@@ -4,14 +4,14 @@
 ## Please see https://vibrationtoolbox.github.io for more information. 
 
 try
-    pkg load vtoolbox
+  pkg load vtoolbox;
 end
 
 [s, success, message]=urlwrite('https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip','vtoolbox_temp.zip');
 
 if success == 0
-    % Let's try to do this at the system prompt. This seems to be
-    % necessary under cygwin. I'm hoping it simlifies the process. 
+    # Let's try to do this at the system prompt. This seems to be
+    # necessary under Cygwin. I'm hoping it simlifies the process. 
     system(['curl -4 -L https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip > vtoolbox_temp.zip'])
     svtb = size('vtoolbox_temp.zip');
     if svtb(2) == 17
@@ -23,11 +23,11 @@ end
 
 if success == 1
     if exist('vtb1_1.m') == 2
-        pkg uninstall vtoolbox
+      pkg uninstall vtoolbox;
     end
     if exist('vtoolbox.zip') == 2
-        delete('vtoolbox.zip')
-        rename('vtoolbox_temp.zip','vtoolbox.zip')
+      delete('vtoolbox.zip');
+      rename('vtoolbox_temp.zip','vtoolbox.zip');
     end
     pkg install vtoolbox.zip
 else
@@ -45,4 +45,4 @@ else
     disp('You may have to manually uninstall and reinstall.')
 end
 
-;
+
