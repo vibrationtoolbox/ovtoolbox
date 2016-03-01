@@ -25,7 +25,7 @@ if success == 1
     if exist('vtb1_1.m') == 2
         pkg uninstall vtoolbox
     end
-    if exist('vtoolbox.zip')
+    if exist('vtoolbox.zip') == 2
         delete('vtoolbox.zip')
         rename('vtoolbox_temp.zip','vtoolbox.zip')
     end
