@@ -26,9 +26,9 @@ if success == 1
       pkg uninstall vtoolbox;
     end
     if exist('vtoolbox.zip') == 2
-      delete('vtoolbox.zip');
-      rename('vtoolbox_temp.zip','vtoolbox.zip');
+      delete('vtoolbox.zip');  
     end
+    rename('vtoolbox_temp.zip','vtoolbox.zip');
     pkg install vtoolbox.zip
 else
     if exist('vtb1_1.m') == 2
