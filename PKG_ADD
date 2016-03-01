@@ -1,1 +1,3 @@
-help vtb
+%help vtb
+disp('Vibration Toolbox Loaded. For help type:')
+disp('help vtoolbox')
