@@ -4,6 +4,16 @@ end
 
 [s, success, message]=urlwrite('https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip','vtoolbox_temp.zip')
 
+if success == 0
+    system(['curl -4 -L https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip > vtoolbox_temp.zip'])
+    svtb = size('vtoolbox_temp.zip')
+    if svtb(2) == 17
+        success = 1
+    end
+    
+end
+
+
 if success == 1
     if exist('vtb1_1.m') == 2
         pkg uninstall vtoolbox
