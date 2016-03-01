@@ -25,8 +25,64 @@ collection of problems that better take advantage of its capabilities.
 Installing, Updating, and Removing The Toolbox
 ======================================================
 
-To install:
----------------------
+Windows Installation
+**********************************
+
+Note that you will have to install `Cygwin <cygwin.com>`__ first before installing Octave.  
+
+1. Download and install `Cygwin <cygwin.com>`__.
+
+2. You may have to run setup multiple times to install the parts you
+   need. Install, at minimum:
+
+   a. ``Octave`` (Math section- octave: GNU Octave language...)
+
+   b. ``xinit`` (X11 section)
+
+   c. ``unzip``
+   
+3. Go to the Windows Menu. In ``Cygwin-X`` run ``XWin Server``
+
+4. A green X should appear on the dock. You should be able to bring up
+   a menu to launch ``Octave``
+
+5. `Click on this
+   <https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip>`__
+   to download the vibration toolbox to your Downloads folder.
+
+Copy and paste this into your Octave window
+   
+.. code-block:: octave
+
+		system('curl -4 -L https://raw.githubusercontent.com/vibrationtoolbox/ovtoolbox/master/inst/vtbud.m>vtbud.m')
+		vtbud
+		delete('vtbud.m')
+
+..
+   Here you will see a list of users on your computer. You need to figure
+   out which one is you. For me, it's `Joseph C. Slater`. So for my
+   installation  I continue
+   with (note the single quotes)
+
+   .. code-block:: octave
+
+		   cd 'Joseph C. Slater' 
+
+   You should be able to copy and paste the rest of this into Octave to
+   complete the process.
+
+   .. code-block:: octave
+
+		   cd Downloads
+		   rename('ovtoolbox-master.zip','vtoolbox.zip')
+		   pkg install vtoolbox.zip
+		   delete('vtoolbox.zip')
+		   ;   
+
+      
+Linux and Mac Installation
+*****************************
+
 
 1. Run `Octave`_.
 
@@ -40,8 +96,18 @@ To install:
    vtb
    ;
 
-**Note**: If you use the Github Download button, you **must** rename
-the downloaded file to :code:`vtoolbox.zip` and manually use :code:`pkg`.
+Alternatively, you can also download ``vtbud.m`` and run it to perform
+the install for you
+
+.. code-block:: octave
+
+		system('curl -4 -L https://raw.githubusercontent.com/vibrationtoolbox/ovtoolbox/master/inst/vtbud.m>vtbud.m')
+		vtbud
+		delete('vtbud.m')
+
+**Note**: If you use the Download button on `github <github.com>`__, you **must** rename
+the downloaded file to :code:`vtoolbox.zip` and manually use
+:code:`pkg install vtoolbox.zip`.
 
 To update:
 -------------
