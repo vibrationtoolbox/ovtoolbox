@@ -139,6 +139,25 @@ In `Octave`_
 *Why the semi-colons?* It's my way of maing sure you don't leave the
 last command unexecuted.
 
+
+Troubleshooting installation:
+-------------------------------
+
+``vtbud`` was initially buggy and is still quite new. If ``vtbud``
+isn't working, please perform a clean install with the following
+
+.. code-block::octave
+
+   pkg uninstall vtoolbox
+   delete('vtbud.m')
+   system('curl -4 -L https://raw.githubusercontent.com/vibrationtoolbox/ovtoolbox/master/inst/vtbud.m>vtbud.m')
+   vtbud
+   delete('vtbud.m')
+   
+The first delete is to make sure you aren't able to run an old version
+of ``vtbud``. The second to make sure it is updated in the future. 
+   
+
 Using The Engineering Vibration Toolbox
 ==========================================
 
