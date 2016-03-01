@@ -1,3 +1,8 @@
+## usage: vtbud
+##
+## Update or install the Engineering Vibration Toolbox for Octave.
+## Please see http://vibrationtoolbox.github.com for more information. 
+
 try
     pkg load vtoolbox
 end
