@@ -28,7 +28,12 @@ Installing, Updating, and Removing The Toolbox
 Windows Installation
 **********************************
 
-Note that you will have to install `Cygwin <cygwin.com>`__ first before installing Octave.  
+
+The availability of a simple `Octave installer for Windows <octave.org`__ has been
+sporadic. At the moment (30-March-2016) there is one available. I do
+recommend that path when available, but when it's not, `Cygwin
+<cygwin.com>`__ is a reliable alternative. 
+
 
 1. Download and install `Cygwin <cygwin.com>`__.
 
