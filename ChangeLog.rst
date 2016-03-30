@@ -11,6 +11,7 @@ website.
 ========= =============== ===============================================
   Date       code/s                change
 --------- --------------- -----------------------------------------------
+03/30/15    Readme.rst      Updated to reflect availability of Windows binary
 03/01/16    vtbud           Whack-a-mole to make it smooth
 03/01/16    vtbud           Work around for cygwin. Download and run
                             should be the new instructions. vtbud
