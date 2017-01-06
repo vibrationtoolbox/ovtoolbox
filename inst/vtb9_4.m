@@ -1,6 +1,6 @@
 function [x,xd]=vtb9_4(n,dt,x0,xd0,a,b,c,u)
 
-%VTB9_4 Solves the forced multiples degree of freedom system using Euler's 
+%VTB9_4 Solves the forced multiple degree of freedom system using Euler's 
 %  method.  
 %  x=VTB9_4(n,dt,x0,a,u)  Solves the system given the initial state vector 'x0',
 %    the state matrix 'a', the time step to be used 'dt', and the number of 
