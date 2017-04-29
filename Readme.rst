@@ -141,7 +141,7 @@ In `Octave`_
    delete('vtoolbox.zip')
    ;
 
-*Why the semi-colons?* It's my way of maing sure you don't leave the
+*Why the semi-colons?* It's my way of making sure you don't leave the
 last command unexecuted.
 
 
