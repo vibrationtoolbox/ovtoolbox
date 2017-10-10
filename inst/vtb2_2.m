@@ -1,4 +1,4 @@
-function vtb2_2(m,c,k,wdr,F0,tf)
+rfunction vtb2_2(m,c,k,wdr,F0,tf)
 %VTB2_2 Particular solution of an underdamped single degree of freedom system.
 % VTB2_2(m,c,k,wdr,F0,tf) plots the response of an underdamped single
 % degree of freedom system to a sinusoidal input with amplitude F0 and 
@@ -21,7 +21,7 @@ w=sqrt(k/m);
 z=c/2/w/m;
 if z>=1
   disp('This system is NOT underdamped, sorry!')
-  break
+  return
 end
 A0=f0/sqrt((w^2-wdr^2)^2+(2*z*w*wdr)^2);
 x=A0*cos(wdr*t-atan2(2*z*w*wdr,w^2-wdr^2));%(2.28)
