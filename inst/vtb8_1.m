@@ -15,7 +15,7 @@ disp(["Unfortunately this poor-man's GUI doesn't work."])
 disp("You'll have to make the input file by hand.")
 disp("Don't worry. You aren't missing much.")
 
-break
+return
 
 aa=version;ll=length(aa);
 figure
