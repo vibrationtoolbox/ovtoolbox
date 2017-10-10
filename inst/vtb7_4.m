@@ -47,7 +47,7 @@ if nargin==2
 	if in-3<1||in+2>length(f)
 		disp('The peak response must be near the middle of the data')
 		disp('Please center your peak and try again')
-		break
+		return
 	end
 	y=x([1:2, 4:6])	
 	pfinrad=x(3)

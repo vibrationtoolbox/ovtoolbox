@@ -29,7 +29,7 @@ Windows Installation
 **********************************
 
 
-The availability of a simple `Octave installer for Windows <octave.org`__ has been
+The availability of a simple `Octave installer for Windows <octave.org>`__ has been
 sporadic. At the moment (30-March-2016) there is one available. I do
 recommend that path when available, but when it's not, `Cygwin
 <cygwin.com>`__ is a reliable alternative.
