@@ -1,5 +1,10 @@
+
 The Engineering Vibration Toolbox for `Octave`_
 #################################################
+
+.. image:: https://zenodo.org/badge/39572279.svg
+    :target: https://zenodo.org/badge/latestdoi/39572279
+
 
 About The Engineering Vibration Toolbox
 ===========================================
