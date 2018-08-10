@@ -1,9 +1,9 @@
 ## usage: vtbud
 ##
 ## Update or install the Engineering Vibration Toolbox for Octave.
-## Please see https://vibrationtoolbox.github.io for more information. 
+## Please see https://vibrationtoolbox.github.io for more information.
 
-    
+
 try
   pkg load vtoolbox;
 end
@@ -12,15 +12,15 @@ end
 
 if success == 0
     # Let's try to do this at the system prompt. This seems to be
-    # necessary under Cygwin. I'm hoping it simlifies the process. 
+    # necessary under Cygwin. I'm hoping it simlifies the process.
     system(['curl -4 -L https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip > vtoolbox_temp.zip'])
     svtb = size('vtoolbox_temp.zip');
-    try 
+    try
         if svtb(2) == 17
             success = 1;
         end
     end
-    
+
 end
 
 
@@ -29,10 +29,10 @@ if success == 1
       pkg uninstall vtoolbox;
     end
     if exist('vtoolbox.zip') == 2
-      delete('vtoolbox.zip');  
+      delete('vtoolbox.zip');
     end
     rename('vtoolbox_temp.zip','vtoolbox.zip');
-    pkg install vtoolbox.zip
+    pkg install -auto vtoolbox.zip
 else
     if exist('vtb1_1.m') == 2
         disp('Not possible to upgrade at this time.')
@@ -47,5 +47,3 @@ else
     disp('Sorry for the inconvenience.')
     disp('You may have to manually uninstall and reinstall.')
 end
-
-
