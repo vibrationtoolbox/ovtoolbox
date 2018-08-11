@@ -32,7 +32,20 @@ if success == 1
       delete('vtoolbox.zip');
     end
     rename('vtoolbox_temp.zip','vtoolbox.zip');
-    pkg install -auto vtoolbox.zip
+    pkg install vtoolbox.zip
+
+    auto_load = yes_or_no("Would you like the Vibration Toolbox to automatically load when you run Octave? ")
+
+    if auto_load == 1
+      disp("Please add the line:\n")
+      disp("  pkg load vtoolbox")
+      disp("\nto your .octaverc file.")
+      disp("I will open the editor for you. Please don't change where you save it.")
+      dummy = input("Hit return to conitinue.")
+      edit('~/.octaverc')
+    end
+
+
 else
     if exist('vtb1_1.m') == 2
         disp('Not possible to upgrade at this time.')
