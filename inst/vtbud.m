@@ -37,13 +37,30 @@ if success == 1
     auto_load = yes_or_no("Would you like the Vibration Toolbox to automatically load when you run Octave? ")
 
     if auto_load == 1
-      disp("Please add the line:\n")
-      disp("  pkg load vtoolbox")
-      disp("\nto your .octaverc file.")
-      disp("I will open the editor for you. Please don't change where you save it.")
-      dummy = input("Hit return to conitinue.")
-      edit('~/.octaverc')
-    end
+        filename = "~/.octaverc";
+        fid = fopen(filename);
+        found = 0;
+        line = 1;
+        endoffile = 0;
+        while endoffile == 0
+          line = fgetl(fid);
+          if line == -1
+            endoffile = 1;
+          endif
+
+          if strncmp("pkg load vtoolbox", line, 17)
+            found = 1;
+            disp("vtoolbox is already automatically being loaded at runtime.")
+            endoffile = 1;
+          endif
+        endwhile
+
+        if found == 0
+          disp(".octaverc file being updated to automatically load vtoolbox.")
+          fputs(fid,"\npkg load vtoolbox");
+        endif
+        fclose(fid);
+     end
 
 
 else

@@ -1,15 +1,15 @@
 Name: vtoolbox
-Version: 6.0.0
-Date: 2016-22-02
+Version: 6.0.1
+Date: 2018-08-12
 Author: Joseph C. Slater
 Maintainer: Joseph C. Slater
 Title: Engineering Vibration Toolbox for Octave
 Categories: Engineering, Math, Vibration
 Autoload: yes
-Description: The Engineering Vibration Toolbox for Octave is a set of educational programs 
-  written in Octave. Also included are a number of help files,  
-  demonstration examples, and data files containing raw experimental data. The 
-  codes include single degree of freedom response, response spectrum, finite 
-  elements, numerical integration, and phase plane analysis. 
+Description: The Engineering Vibration Toolbox for Octave is a set of educational programs
+  written in Octave. Also included are a number of help files,
+  demonstration examples, and data files containing raw experimental data. The
+  codes include single degree of freedom response, response spectrum, finite
+  elements, numerical integration, and phase plane analysis.
 License: GPLv3+
 Problems: vtb8_1 doesn't work. It hasn't in a long time. I don't have plans to fix it. Sorry.

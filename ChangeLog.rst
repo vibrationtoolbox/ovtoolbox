@@ -11,6 +11,9 @@ website.
 ========= =============== ===============================================
   Date       code/s                change
 --------- --------------- -----------------------------------------------
+08/12/18    vtbud           Auto-write auto-load to .octaverc (Tero Knuutila)
+08/11/18    vtbud           Revert -auto. Add display output to inform user
+                            how to set automatic loading.
 08/10/18    vtbud           Change pkg install to pkg install -auto
                             to automatically add it to path.
 03/30/16    Readme.rst      Updated to reflect availability of Windows binary
