@@ -42,6 +42,10 @@ if success == 1
         found = 0;
         line = 1;
         endoffile = 0;
+        if exist(filename)==2
+          endoffile = 1;
+          system(['touch ', filename])
+        endif
         while endoffile == 0
           line = fgetl(fid);
           if line == -1

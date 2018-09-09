@@ -11,6 +11,7 @@ website.
 ========= =============== ===============================================
   Date       code/s                change
 --------- --------------- -----------------------------------------------
+09/08/18    vtbud           Fix failure to read empty .octaverc
 08/12/18    vtbud           Auto-write auto-load to .octaverc (Tero Knuutila)
 08/11/18    vtbud           Revert -auto. Add display output to inform user
                             how to set automatic loading.
