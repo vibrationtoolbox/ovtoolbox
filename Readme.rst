@@ -119,6 +119,13 @@ the install for you
 the downloaded file to :code:`vtoolbox.zip` and manually use
 :code:`pkg install vtoolbox.zip`.
 
+Using the toolbox
+-------------------
+
+After installation, load the package with :code:`pkg load vtoolbox`
+(add it to your ``.octaverc`` to load it automatically). Then type
+:code:`help vtoolbox` for an overview, or :code:`vtb` for the main menu.
+
 To update:
 -------------
 To update, run :code:`vtbud` in `Octave`_ if you have updated since Feb 23, 2016.

@@ -25,13 +25,13 @@ function [xout,fout]=vtb8_2(node,ncon,zero,force,conm)
 %      1) Use the program vtb8_1.
 %      2) Type clear.  Enter the data interactively.
 %         Save a file with the file extension .con.
-%         i.e. type: save beam1.con
+%         i.e. type: save -mat beam1.con
 %         Type: beam
 %      3) Type clear.  Enter the data interactively.
 %         Type: [x,f]=vtb8_2(node,ncon,zero,force)
 %      4) Create a script 'm' file including the definitions.
 %         Add the line:
-%         save 'filename.con'
+%         save -mat 'filename.con'
 %         to the end of the file.
 %         Execute the script file.  
 %         Type: [x,f]=vtb8_2(node,ncon,zero,force,conm);
@@ -51,33 +51,18 @@ clc,home
 
 if nargin==0
   [filename,pathname]=uigetfile('*.con','Open Connectivity File');
-  sizepath=size(pathname);
-  shortpathname=pathname(1:sizepath(2)-1);
-  lsp=size(findstr(shortpathname,':'));
-  if strcmp(computer,'MAC2') && lsp(1)==0
-    shortpathname=[shortpathname ':'];
+  if isequal(filename,0)
+    return
   end
-  cdpath=['cd ' '''' shortpathname '''' ];% Crazy quotes allow spaces
-  %                                       % in directory names.
-  eval(cdpath)
-  sfilename=size(filename);
-  path(path,pathname);
-  oflag=1;
-  lfilename=sfilename(2);
-  if filename(lfilename-3)=='.'
-    filename=[filename(1:lfilename-4)  '.con'];
-	projectname=filename(1:lfilename-4);
-   else
-    filename=[filename '.con'];
-	projectname=filename(1:lfilename-4);
-  end
-  eval(['load ',filename, ' -mat']);
+  cd(pathname)
+  [~,projectname]=fileparts(filename);
+  load([projectname '.con'],'-mat');
 end
 
 if nargin==1
   disp(' Loading configuration data from file.')
   projectname=node;
-  eval(['load ',projectname,'.con -mat']);
+  load([projectname '.con'],'-mat');
 end
 
 clc
@@ -225,13 +210,10 @@ disp(' Applying Boundary Conditions.')
 disp(' ')
 k1=k;
 m1=m;
-if length(zero)~=0
-  np=(zero(:,1)-1)*3+zero(:,2);
-  np=sort(np);
-  p=1:3*snode;
-  p(np)=p(np)*0;
-  p=sort(p);
-  p=p(length(np)+1:length(p));
+p=1:3*snode(1);
+if ~isempty(zero)
+  np=unique((zero(:,1)-1)*3+zero(:,2));
+  p(np)=[];
   k1=k(p,p);
   m1=m(p,p);
 end
@@ -278,15 +260,9 @@ else
   f1=diag(fs1);
   x1=x1(:,sf1);
   snode;
-  x=zeros(snode(1)*3,snode(1)*3-szero(1));
-  if length(zero)~=0
-    for ic=1:length(x1)
-      x(p,ic)=x1(:,ic);
-    end
-  else
-    for ic=1:length(x1)
-      x(:,ic)=x1(:,ic);
-    end
+  x=zeros(snode(1)*3,numel(p));
+  for ic=1:length(x1)
+    x(p,ic)=x1(:,ic);
   end
   ff=diag(f1);
   f=ff;
@@ -297,62 +273,32 @@ clc,home
 
 answer1=input('Save Results(y)? (y/n) ','s');
 if answer1~='n'
-  if exist('pathname')
-    sizepath=size(pathname);
-    shortpathname=pathname(1:sizepath(2)-1);
-    lsp=size(findstr(shortpathname,':'));
-    if strcmp(computer,'MAC2') && lsp(1)==0
-      shortpathname=[shortpathname ':'];
-    end
-    cdpath=['cd ' '''' shortpathname '''' ];% Crazy quotes allow spaces
-    %                                       % in directory names.
-    eval(cdpath)
-  end
-  if exist('projectname')==0
+  if exist('projectname','var')==0
     [filename,pathname]=uiputfile('projectname.out','Save as:');
-    sfilename=size(filename);
-    path(path,pathname)
-    lfilename=sfilename(2);
-    if filename(lfilename-3)=='.'
-      filename=[filename(1:lfilename-4)  '.out'];
-      projectname=filename(1:lfilename-4);
-     else
-      filename=[filename '.out'];
-	  projectname=filename(1:lfilename-4);
+    if ~isequal(filename,0)
+      cd(pathname)
+      [~,projectname]=fileparts(filename);
     end
   end
-  eval(['save ',projectname,'.out',' x',' f']);
+  if exist('projectname','var')
+    save('-mat',[projectname '.out'],'x','f');
+  end
   disp('Saving data')
 end
 
 answer2=input('Save Equations(y)? (y/n) ','s');
 if answer2~='n'
-  if exist('pathname')
-    sizepath=size(pathname);
-    shortpathname=pathname(1:sizepath(2)-1);
-    lsp=size(findstr(shortpathname,':'));
-    if strcmp(computer,'MAC2') && lsp(1)==0
-      shortpathname=[shortpathname ':'];
-    end
-    cdpath=['cd ' '''' shortpathname '''' ];% Crazy quotes allow spaces
-    %                                       % in directory names.
-    eval(cdpath)
-  end
-  if exist('projectname')==0
+  if exist('projectname','var')==0
     [filename,pathname]=uiputfile('projectname.eqn','Save as:');
-    sfilename=size(filename);
-    path(path,pathname)
-    lfilename=sfilename(2);
-    if filename(lfilename-3)=='.'
-      filename=[filename(1:lfilename-4)  '.eqn'];
-      projectname=filename(1:lfilename-4);
-     else
-      filename=[filename '.eqn'];
-	  projectname=filename(1:lfilename-4);
+    if ~isequal(filename,0)
+      cd(pathname)
+      [~,projectname]=fileparts(filename);
     end
   end
   p=p';
-  eval(['save ',projectname,'.eqn',' k1',' m1',' x1',' f1',' p']);
+  if exist('projectname','var')
+    save('-mat',[projectname '.eqn'],'k1','m1','x1','f1','p');
+  end
   disp('Saving data')
 end
 

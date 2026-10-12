@@ -11,6 +11,14 @@ website.
 ========= =============== ===============================================
   Date       code/s                change
 --------- --------------- -----------------------------------------------
+10/11/26    vtb8_1          Rewritten to work in Octave (was disabled).
+10/11/26    vtb8_2, vtb8_3  Work in Octave: replace findstr/computer/eval
+                            file handling, fix boundary-condition indexing,
+                            save/load .con/.eqn/.out with -mat.
+10/11/26    vtb8_e1         Save .con file with -mat. Fix density (per unit
+                            length) and modulus of elasticity (aluminum).
+10/11/26    vtoolbox        Add vtoolbox.m so "help vtoolbox" works in
+                            current Octave. Add INDEX file.
 09/08/18    vtbud           Fix failure to read empty .octaverc
 08/12/18    vtbud           Auto-write auto-load to .octaverc (Tero Knuutila)
 08/11/18    vtbud           Revert -auto. Add display output to inform user
