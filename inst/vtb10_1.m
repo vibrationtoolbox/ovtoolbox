@@ -41,10 +41,10 @@ function vtb10_1(a,b,dt,len,n,func)
 %
 nzero=0;
 %clg
-[x,xd]=meshdom(a,b);
+[x,xd]=meshgrid(a,b);
 s=size(x);
 axis('square')
-axis([x(1,1) x(1,s(2)) xd(s(1),1) xd(1,1)]);
+axis([min(x(:)) max(x(:)) min(xd(:)) max(xd(:))]);
 
 aa=version;ll=length(aa);
 plot(x(1,1),xd(1,1))
@@ -73,7 +73,6 @@ for k=1:n
               zlog(nzero,1:2)=[x(i,j) xd(i,j)];
 			  plot(x(i,j),xd(i,j),'or')
              else		  
-              [ones(l,1)*b(1) ones(l,1)*b(2)];
               old=sum(prod(zlog'==[ones(nzero,1)*x(i,j) ones(nzero,1)*xd(i,j)]'));
               if ~old
                  xx=num2str(x(i,j));
@@ -95,6 +94,6 @@ for k=1:n
   xd=xd2;
   %drawnow
 end
-plot(zlog(:,1),zlog(:,2),'or')
+if nzero>0, plot(zlog(:,1),zlog(:,2),'or'), end
 hold off
 grid('on')

@@ -1,6 +1,12 @@
-function [xout,fout]=vtb8_2(node,ncon,zero,force,conm)
+function [xout,fout]=vtb8_2(node,ncon,zero,force,conm,opts)
 %VTB8_2 [x,f]=VTB8_2(node,ncon,zero,force,conm)
 %       [x,f]=vtb8_2('filename');
+%    Optional last argument opts (a struct) answers the prompts so the
+%    code can be run from scripts: opts.analysis ('s' static or 'd'
+%    dynamic), opts.save ('y'/'n', saves the .out and .eqn files) and
+%    opts.plot ('y'/'n', view results with vtb8_3) and opts.name (project
+%    name used for the saved files). Any missing field is
+%    asked for interactively. For a file name: vtb8_2('filename',opts).
 %    Timoshenko 2-D beam finite element code.
 %
 %    node=[x1 y1;x2 y2;...]
@@ -40,14 +46,11 @@ function [xout,fout]=vtb8_2(node,ncon,zero,force,conm)
 %    An example file named vtb8_e1.m is available.
 %
 %    I suggest you print the file vtb8read.txt.
-clc
-home
 %help readme10
 %disp(' ')
 %disp(' Hit return to continue')
 %pause
 
-clc,home
 
 if nargin==0
   [filename,pathname]=uigetfile('*.con','Open Connectivity File');
@@ -59,14 +62,19 @@ if nargin==0
   load([projectname '.con'],'-mat');
 end
 
-if nargin==1
+if nargin==2 && ischar(node) && isstruct(ncon)
+  opts=ncon;
+end
+if ~exist('opts','var')
+  opts=struct();
+end
+
+if ischar(node)
   disp(' Loading configuration data from file.')
   projectname=node;
   load([projectname '.con'],'-mat');
 end
 
-clc
-home
 disp(' Constructing Global Mass and Stiffness Matrices')
 disp(' ')
 snode=size(node);
@@ -204,8 +212,6 @@ if sconm(1)~=0
 end
 
 % Zeroing stiffness matrix and mass matrix.
-clc
-home
 disp(' Applying Boundary Conditions.')
 disp(' ')
 k1=k;
@@ -217,11 +223,14 @@ if ~isempty(zero)
   k1=k(p,p);
   m1=m(p,p);
 end
-clc,home
 selx=1:3:snode(1)*3;
 sely=2:3:snode(1)*3;
 selt=3:3:snode(1)*3;
-answer=input('Do you want to do a static or dynamic analysis? (s/d) ','s');
+if isfield(opts,'analysis')
+  answer=opts.analysis;
+else
+  answer=input('Do you want to do a static or dynamic analysis? (s/d) ','s');
+end
 if answer=='s' || answer=='S'
   pf=(force(:,1)-1)*3+force(:,2);
   f=zeros(snode(1)*3,1);
@@ -238,7 +247,6 @@ else
   [vk,dk]=eig(k1);
   flag=0;
   for ij=1:length(k1)
-    clc,disp('Working')
     if dk(ij,ij)<1e-14
       flag=1;
       keig=num2str(dk(ij,ij));
@@ -269,9 +277,15 @@ else
   xx=x;
 end
 
-clc,home
 
-answer1=input('Save Results(y)? (y/n) ','s');
+if isfield(opts,'name')
+  projectname=opts.name;
+end
+if isfield(opts,'save')
+  answer1=opts.save;
+else
+  answer1=input('Save Results and Equations(y)? (y/n) ','s');
+end
 if answer1~='n'
   if exist('projectname','var')==0
     [filename,pathname]=uiputfile('projectname.out','Save as:');
@@ -286,7 +300,7 @@ if answer1~='n'
   disp('Saving data')
 end
 
-answer2=input('Save Equations(y)? (y/n) ','s');
+answer2=answer1;
 if answer2~='n'
   if exist('projectname','var')==0
     [filename,pathname]=uiputfile('projectname.eqn','Save as:');
@@ -302,7 +316,11 @@ if answer2~='n'
   disp('Saving data')
 end
 
-answer=input('Show results graphically(y)? (y/n) ','s');
+if isfield(opts,'plot')
+  answer=opts.plot;
+else
+  answer=input('Show results graphically(y)? (y/n) ','s');
+end
 if answer~='n'
   vtb8_3(node,x,zero,ncon,p,f);
 end

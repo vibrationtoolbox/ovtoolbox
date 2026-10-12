@@ -11,6 +11,16 @@ website.
 ========= =============== ===============================================
   Date       code/s                change
 --------- --------------- -----------------------------------------------
+10/11/26    vtb1_3, vtb3_5  Remove eval; vtb1_3 also accepts function
+                            handles and passes the stage time correctly.
+10/11/26    vtb6_5          Remove eval; total phase now in degrees.
+10/11/26    vtb5_6, vtb10_1 Remove globals/meshdom; sliders use handle
+                            callbacks (Octave compatible).
+10/11/26    vtb2_2          Fix stray character that broke the file.
+10/11/26    vtb8_2          Optional opts struct for non-interactive use;
+                            no clc.
+10/11/26    package         Release workflow, .gitignore, drop dead octaverc
+                            and Categories field.
 10/11/26    vtb8_1          Help text notes the GUI is dated; defining the
                             model directly and calling vtb8_2 is easier.
 10/11/26    vtbud           Install from the latest GitHub release instead

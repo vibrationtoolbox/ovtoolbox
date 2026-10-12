@@ -1,6 +1,6 @@
 function [f,TXF]=vtb7_2(x,f,dt,n)
 
-%VTB7_2 
+%VTB7_2 Frequency response function from sampled time data.
 %  [W,TF] = VTB7_2(x,f,dt,n)
 %  generates frequency response function (H(iw))
 %  dt is the time step of the sampled data

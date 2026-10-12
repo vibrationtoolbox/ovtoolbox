@@ -6,7 +6,6 @@ This repo is an Octave package (`vtoolbox`), not an application. There is no bui
 
 - Package metadata lives at the repo root: `DESCRIPTION` (name, version, date), `INDEX` (function list for `pkg`/`doc`), `PKG_ADD`, `COPYING`.
 - All code and data live in `inst/`. Octave's `pkg install` copies `inst/` flat onto the load path, so every file in `inst/` is a top-level function or data file.
-- `octaverc` at the root is a legacy sample with everything commented out; it is not used by the package.
 
 ## Install and verify
 
@@ -27,14 +26,13 @@ Run a single function by calling it, e.g. `vtb1_1(1,.1,1,1,0,10)`. Most function
 Every commit that is pushed must also be released: bump the version, push, and publish a GitHub release (do not push without releasing).
 
 1. Bump `Version`/`Date` in `DESCRIPTION` and add a `ChangeLog.rst` row; commit and push.
-2. Build the tarball (single top-level dir) and publish it under the constant asset name `vtoolbox.tar.gz`, which `vtbud` and the Readme URL depend on:
+2. Push a tag `vX.Y.Z`; `.github/workflows/release.yml` builds the tarball (single top-level dir), checks it installs, and publishes the release with the constant asset name `vtoolbox.tar.gz`, which `vtbud` and the Readme URL depend on:
 
 ```sh
-git archive --prefix=vtoolbox-X.Y.Z/ -o /tmp/vtoolbox.tar.gz HEAD
-gh release create vX.Y.Z /tmp/vtoolbox.tar.gz --title "vX.Y.Z" --notes "..."
+git tag vX.Y.Z && git push origin vX.Y.Z
 ```
 
-The tag must be `v` plus the `DESCRIPTION` version; `vtbud` compares them.
+The tag must be `v` plus the `DESCRIPTION` version (the workflow fails otherwise); `vtbud` compares them. Do not also run `gh release create`.
 
 ## Architecture and naming
 

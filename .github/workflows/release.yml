@@ -1,0 +1,43 @@
+name: Release
+
+# Pushing a tag such as v6.0.4 builds vtoolbox.tar.gz and publishes a GitHub
+# release. vtbud and the Readme install command rely on the asset name
+# vtoolbox.tar.gz and on the tag being "v" plus the DESCRIPTION version.
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check tag matches DESCRIPTION version
+        run: |
+          version=$(sed -n 's/^Version: *//p' DESCRIPTION | tr -d '[:space:]')
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match DESCRIPTION version $version" >&2
+            exit 1
+          fi
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+
+      - name: Build package tarball
+        run: git archive --prefix="vtoolbox-$VERSION/" -o vtoolbox.tar.gz HEAD
+
+      - name: Install the package in Octave as a check
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y octave
+          octave-cli --norc --eval "pkg install vtoolbox.tar.gz; pkg load vtoolbox; help vtoolbox"
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" vtoolbox.tar.gz \
+            --title "$GITHUB_REF_NAME" --generate-notes

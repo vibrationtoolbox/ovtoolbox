@@ -1,4 +1,9 @@
 *.*~
+
+# Output written by vtb8_2 (existing example files are already tracked)
+*.out
+*.eqn
+octave-workspace
 # OS generated files #
 ######################
 .DS_Store

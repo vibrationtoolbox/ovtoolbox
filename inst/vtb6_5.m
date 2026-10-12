@@ -43,16 +43,10 @@ wn=0;
 if nargin==6
 	zeta=0.01;
 end
-pfunc='subplot(2,1,1);plot(';
-pphasefunc = 'subplot(2,1,2);plot(';
+labels={};
 i;
 while wn<1.3*(fmax*2*pi)%Including contributions of mode with frequencies 5x the max
     i=i+1;
-    if i>1;
-        pfunc=[pfunc ','];
-        pphasefunc=[pphasefunc ','];
-
-    end
 
     clear wn xx U
     [wn,xx,U]=vtb6_3(i,bctype,beamparams,5000);
@@ -62,24 +56,23 @@ while wn<1.3*(fmax*2*pi)%Including contributions of mode with frequencies 5x the
 
     f(i)=wn/2/pi;
 
-    pfunc=[pfunc  'w/2/pi,20*log10(abs(a(:,' num2str(i) ['))),"-;' ...
-                        'Contribution of mode ']  num2str(i)  ';"'];
-    pphasefunc=[pphasefunc  'w/2/pi,180/pi*unwrap(angle(a(:,' num2str(i) ['))),"-;' ...
-                        'Contribution of mode ']  num2str(i)  ';"'];
-    
+    labels{i}=['Contribution of mode ' num2str(i)];
 end
 
-pfunc=[pfunc  ',w/2/pi,20*log10(abs(sum(a,2))),"-;Total Magnitude;"'];
-pphasefunc = [pphasefunc  ',w/2/pi,unwrap(angle(sum(a,2))),"-;Total Phase;"'];   
-
+fr=w/2/pi;
+mag=20*log10(abs(a));
+phase=180/pi*unwrap(angle(a));
+Htot=sum(a,2);
 
 subplot(2,1,1)
-eval([pfunc ')'])
+plot(fr,mag,'-',fr,20*log10(abs(Htot)),'-')
+legend([labels {'Total Magnitude'}])
 grid on
 xlabel('Frequency (Hz)')
 ylabel('FRF (dB)')
-axis
-eval([pphasefunc ')'])
+subplot(2,1,2)
+plot(fr,phase,'-',fr,180/pi*unwrap(angle(Htot)),'-')
+legend([labels {'Total Phase'}])
 xlabel('Frequency (Hz)')
 ylabel('Phase (deg)')
 grid on
