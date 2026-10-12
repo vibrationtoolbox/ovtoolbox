@@ -24,6 +24,8 @@ Run a single function by calling it, e.g. `vtb1_1(1,.1,1,1,0,10)`. Most function
 
 ## Releasing
 
+Every commit that is pushed must also be released: bump the version, push, and publish a GitHub release (do not push without releasing).
+
 1. Bump `Version`/`Date` in `DESCRIPTION` and add a `ChangeLog.rst` row; commit and push.
 2. Build the tarball (single top-level dir) and publish it under the constant asset name `vtoolbox.tar.gz`, which `vtbud` and the Readme URL depend on:
 

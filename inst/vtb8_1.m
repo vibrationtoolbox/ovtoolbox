@@ -6,6 +6,11 @@ function vtb8_1
 %   Nodes are entered by typing coordinates; all other items are picked
 %   with the mouse (the node nearest the click is used).
 %   See VTB8_2 for the meaning of the variables.
+%
+%   NOTE: This is a very dated graphical interface. By modern standards
+%   it is likely easier to define the model directly (see the example
+%   script vtb8_e1.m) and call VTB8_2 yourself. Modern finite element
+%   software has also progressed to be easy to use and freely available.
 % I suggest you print the file vtb8read.
 
 %	Joseph C. Slater, 6-17-90

@@ -11,6 +11,8 @@ website.
 ========= =============== ===============================================
   Date       code/s                change
 --------- --------------- -----------------------------------------------
+10/11/26    vtb8_1          Help text notes the GUI is dated; defining the
+                            model directly and calling vtb8_2 is easier.
 10/11/26    vtbud           Install from the latest GitHub release instead
                             of master, skip if already current, fix
                             .octaverc auto-load. Readme updated.
