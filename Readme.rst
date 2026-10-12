@@ -56,9 +56,9 @@ recommend that path when available, but when it's not, `Cygwin
 4. A green X should appear on the dock. You should be able to bring up
    a menu to launch ``Octave``
 
-5. `Click on this
-   <https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip>`__
-   to download the vibration toolbox to your Downloads folder.
+5. Open the `latest release
+   <https://github.com/vibrationtoolbox/ovtoolbox/releases/latest>`__
+   if you prefer to download the toolbox manually.
 
 Copy and paste this into your Octave window
 
@@ -100,9 +100,8 @@ Linux and Mac Installation
 
 .. code-block:: octave
 
-   [s, success, message]=urlwrite('https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip','vtoolbox.zip')
-   pkg install vtoolbox.zip
-   delete('vtoolbox.zip')
+   pkg install https://github.com/vibrationtoolbox/ovtoolbox/releases/latest/download/vtoolbox.tar.gz
+   pkg load vtoolbox
    vtb
    ;
 
@@ -115,9 +114,10 @@ the install for you
 		vtbud
 		delete('vtbud.m')
 
-**Note**: If you use the Download button on `github <github.com>`__, you **must** rename
-the downloaded file to :code:`vtoolbox.zip` and manually use
-:code:`pkg install vtoolbox.zip`.
+**Note**: If you download ``vtoolbox.tar.gz`` from the `releases page
+<https://github.com/vibrationtoolbox/ovtoolbox/releases/latest>`__ yourself, install it with
+:code:`pkg install vtoolbox.tar.gz`. Do not use the "Source code" archives
+GitHub attaches to each release.
 
 Using the toolbox
 -------------------
@@ -128,16 +128,15 @@ After installation, load the package with :code:`pkg load vtoolbox`
 
 To update:
 -------------
-To update, run :code:`vtbud` in `Octave`_ if you have updated since Feb 23, 2016.
+To update, run :code:`vtbud` in `Octave`_ (it installs the latest release
+and does nothing if you are already current).
 
 Otherwise, run `Octave`_ and paste the following to the prompt:
 
 .. code-block:: octave
 
    pkg uninstall vtoolbox
-   [s, success, message]=urlwrite('https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip','vtoolbox.zip')
-   pkg install vtoolbox.zip
-   delete('vtoolbox.zip')
+   pkg install https://github.com/vibrationtoolbox/ovtoolbox/releases/latest/download/vtoolbox.tar.gz
    ;
 
 

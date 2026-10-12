@@ -20,7 +20,19 @@ octave-cli --norc --eval "pkg uninstall vtoolbox; pkg install /tmp/t/v.tar.gz; p
 
 Run a single function by calling it, e.g. `vtb1_1(1,.1,1,1,0,10)`. Most functions plot, so a graphics toolkit is needed. `doc_cache_create: unusable help text` warnings during install are known and harmless.
 
-`inst/vtbud.m` is the end-user installer/updater. It downloads `master.zip` from GitHub, so changes only reach users once pushed to `master`.
+`inst/vtbud.m` is the end-user installer/updater. It installs the `vtoolbox.tar.gz` asset of the latest GitHub release (not `master`), so changes reach users only after a release is published.
+
+## Releasing
+
+1. Bump `Version`/`Date` in `DESCRIPTION` and add a `ChangeLog.rst` row; commit and push.
+2. Build the tarball (single top-level dir) and publish it under the constant asset name `vtoolbox.tar.gz`, which `vtbud` and the Readme URL depend on:
+
+```sh
+git archive --prefix=vtoolbox-X.Y.Z/ -o /tmp/vtoolbox.tar.gz HEAD
+gh release create vX.Y.Z /tmp/vtoolbox.tar.gz --title "vX.Y.Z" --notes "..."
+```
+
+The tag must be `v` plus the `DESCRIPTION` version; `vtbud` compares them.
 
 ## Architecture and naming
 

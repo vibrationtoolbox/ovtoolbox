@@ -1,83 +1,81 @@
-## usage: vtbud
-##
-## Update or install the Engineering Vibration Toolbox for Octave.
-## Please see https://vibrationtoolbox.github.io for more information.
+function vtbud
+% usage: vtbud
+%
+% Update or install the Engineering Vibration Toolbox for Octave from the
+% latest GitHub release. Please see https://vibrationtoolbox.github.io
+% for more information.
 
+repo = 'vibrationtoolbox/ovtoolbox';
+tarurl = ['https://github.com/' repo '/releases/latest/download/vtoolbox.tar.gz'];
+apiurl = ['https://api.github.com/repos/' repo '/releases/latest'];
+tarfile = fullfile(tempdir, 'vtoolbox.tar.gz');
 
+installed = '';
+l = pkg('list', 'vtoolbox');
+if ~isempty(l)
+  installed = l{1}.version;
+end
+
+% Skip the download if the latest release is already installed.
+latest = '';
 try
-  pkg load vtoolbox;
+  info = jsondecode(webread(apiurl));
+  latest = regexprep(info.tag_name, '^v', '');
+catch
+end
+if ~isempty(installed) && ~isempty(latest) && ~newer(latest, installed)
+  printf('The Vibration Toolbox %s is already the latest version.\n', installed);
+  return
 end
 
-[s, success, message]=urlwrite('https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip','vtoolbox_temp.zip');
+success = true;
+try
+  websave(tarfile, tarurl);
+catch
+  % Some systems (notably Cygwin) need curl to do the download.
+  success = (system(['curl -4 -L -f -o "' tarfile '" ' tarurl]) == 0);
+end
 
-if success == 0
-    # Let's try to do this at the system prompt. This seems to be
-    # necessary under Cygwin. I'm hoping it simlifies the process.
-    system(['curl -4 -L https://github.com/vibrationtoolbox/ovtoolbox/archive/master.zip > vtoolbox_temp.zip'])
-    svtb = size('vtoolbox_temp.zip');
-    try
-        if svtb(2) == 17
-            success = 1;
-        end
-    end
+if ~success || ~exist(tarfile, 'file')
+  disp('Not able to download the toolbox at this time.')
+  disp('Either you are not on the internet or are using a Windows machine.')
+  disp('Automated installation is, unfortunately, unreliable on Windows.')
+  disp(['Please try later or use the download and installation ' ...
+        'instructions on vibrationtoolbox.github.io'])
+  return
+end
+
+if ~isempty(installed)
+  pkg('uninstall', 'vtoolbox');
+end
+pkg('install', tarfile);
+delete(tarfile);
+
+if yes_or_no('Would you like the Vibration Toolbox to automatically load when you run Octave? ')
+  rcfile = fullfile(getenv('HOME'), '.octaverc');
+  txt = '';
+  if exist(rcfile, 'file') == 2
+    txt = fileread(rcfile);
+  end
+  if ~isempty(regexp(txt, '^\s*pkg\s+load\s+vtoolbox', 'once', 'lineanchors'))
+    disp('vtoolbox is already automatically being loaded at runtime.')
+  else
+    disp('.octaverc file being updated to automatically load vtoolbox.')
+    fid = fopen(rcfile, 'a');
+    fputs(fid, "\npkg load vtoolbox\n");
+    fclose(fid);
+  end
+end
 
 end
 
-
-if success == 1
-    if exist('vtb1_1.m') == 2
-      pkg uninstall vtoolbox;
-    end
-    if exist('vtoolbox.zip') == 2
-      delete('vtoolbox.zip');
-    end
-    rename('vtoolbox_temp.zip','vtoolbox.zip');
-    pkg install vtoolbox.zip
-
-    auto_load = yes_or_no("Would you like the Vibration Toolbox to automatically load when you run Octave? ")
-
-    if auto_load == 1
-        filename = "~/.octaverc";
-        fid = fopen(filename);
-        found = 0;
-        line = 1;
-        endoffile = 0;
-        if exist(filename)==2
-          endoffile = 1;
-          system(['touch ', filename])
-        endif
-        while endoffile == 0
-          line = fgetl(fid);
-          if line == -1
-            endoffile = 1;
-          endif
-
-          if strncmp("pkg load vtoolbox", line, 17)
-            found = 1;
-            disp("vtoolbox is already automatically being loaded at runtime.")
-            endoffile = 1;
-          endif
-        endwhile
-
-        if found == 0
-          disp(".octaverc file being updated to automatically load vtoolbox.")
-          fputs(fid,"\npkg load vtoolbox");
-        endif
-        fclose(fid);
-     end
-
-
-else
-    if exist('vtb1_1.m') == 2
-        disp('Not possible to upgrade at this time.')
-    else
-        dis('Not able to install at this time.')
-    end
-    disp(['Either you are not on the internet or are using a Windows ' ...
-          'machine.'])
-    disp('Automated installation is, unfortunately, unreliable on Windows')
-    disp(['Please try later or use the download and installation ' ...
-          'instructions on vibtationtoolbox.github.com'])
-    disp('Sorry for the inconvenience.')
-    disp('You may have to manually uninstall and reinstall.')
+function tf = newer(a, b)
+% True if version string a is newer than version string b.
+  va = sscanf(strrep(a, '.', ' '), '%d')';
+  vb = sscanf(strrep(b, '.', ' '), '%d')';
+  n = max(numel(va), numel(vb));
+  va(end+1:n) = 0;
+  vb(end+1:n) = 0;
+  d = find(va ~= vb, 1);
+  tf = ~isempty(d) && va(d) > vb(d);
 end

@@ -11,6 +11,9 @@ website.
 ========= =============== ===============================================
   Date       code/s                change
 --------- --------------- -----------------------------------------------
+10/11/26    vtbud           Install from the latest GitHub release instead
+                            of master, skip if already current, fix
+                            .octaverc auto-load. Readme updated.
 10/11/26    vtb8_1          Rewritten to work in Octave (was disabled).
 10/11/26    vtb8_2, vtb8_3  Work in Octave: replace findstr/computer/eval
                             file handling, fix boundary-condition indexing,

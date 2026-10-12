@@ -3,6 +3,7 @@ Version: 6.0.2
 Date: 2026-10-11
 Author: Joseph C. Slater
 Maintainer: Joseph C. Slater
+Url: https://github.com/vibrationtoolbox/ovtoolbox
 Title: Engineering Vibration Toolbox for Octave
 Categories: Engineering, Math, Vibration
 Autoload: yes
